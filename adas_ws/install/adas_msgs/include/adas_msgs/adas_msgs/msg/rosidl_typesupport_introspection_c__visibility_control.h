@@ -1,1 +1,0 @@
-/home/khatvangi/adas_ws/build/adas_msgs/rosidl_typesupport_introspection_c/adas_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h

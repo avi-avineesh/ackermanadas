@@ -1,0 +1,11 @@
+﻿adas_ws/build/
+adas_ws/install/
+adas_ws/log/
+**/build/
+**/install/
+**/log/
+__pycache__/
+*.pyc
+*.egg-info/
+*.egg-link
+.vscode/

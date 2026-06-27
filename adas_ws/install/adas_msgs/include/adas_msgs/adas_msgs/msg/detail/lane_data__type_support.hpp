@@ -1,1 +1,0 @@
-/home/khatvangi/adas_ws/build/adas_msgs/rosidl_generator_cpp/adas_msgs/msg/detail/lane_data__type_support.hpp

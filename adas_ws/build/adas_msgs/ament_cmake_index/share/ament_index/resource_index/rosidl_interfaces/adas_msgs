@@ -1,8 +1,0 @@
-msg/BoundingBox2D.idl
-msg/BoundingBox2D.msg
-msg/BoundingBox2DArray.idl
-msg/BoundingBox2DArray.msg
-msg/LaneData.idl
-msg/LaneData.msg
-msg/VehicleParams.idl
-msg/VehicleParams.msg

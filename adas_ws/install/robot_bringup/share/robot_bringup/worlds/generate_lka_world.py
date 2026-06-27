@@ -1,1 +1,0 @@
-/home/khatvangi/adas_ws/src/robot_bringup/worlds/generate_lka_world.py

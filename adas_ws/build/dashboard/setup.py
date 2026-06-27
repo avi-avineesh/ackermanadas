@@ -1,1 +1,0 @@
-/home/khatvangi/adas_ws/src/dashboard/setup.py

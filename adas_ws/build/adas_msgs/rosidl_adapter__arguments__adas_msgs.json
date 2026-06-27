@@ -1,9 +1,0 @@
-{
-  "package_name": "adas_msgs",
-  "non_idl_tuples": [
-    "/home/khatvangi/adas_ws/src/adas_msgs:msg/BoundingBox2D.msg",
-    "/home/khatvangi/adas_ws/src/adas_msgs:msg/BoundingBox2DArray.msg",
-    "/home/khatvangi/adas_ws/src/adas_msgs:msg/LaneData.msg",
-    "/home/khatvangi/adas_ws/src/adas_msgs:msg/VehicleParams.msg"
-  ]
-}

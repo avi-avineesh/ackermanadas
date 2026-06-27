@@ -1,1 +1,0 @@
-/home/khatvangi/adas_ws/build/adas_msgs/rosidl_typesupport_introspection_c/adas_msgs/msg/detail/lane_data__rosidl_typesupport_introspection_c.h

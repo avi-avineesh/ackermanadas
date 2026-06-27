@@ -1,1 +1,0 @@
-/home/khatvangi/adas_ws/build/adas_core/launch/laptop.launch.py

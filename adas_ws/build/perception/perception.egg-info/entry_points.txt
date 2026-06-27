@@ -1,3 +1,0 @@
-[console_scripts]
-camera_node = perception.camera_node:main
-lidar_node = perception.lidar_node:main

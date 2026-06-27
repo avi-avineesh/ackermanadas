@@ -1,1 +1,0 @@
-/home/khatvangi/adas_ws/build/adas_msgs/rosidl_generator_c/adas_msgs/msg/bounding_box2_d_array.h

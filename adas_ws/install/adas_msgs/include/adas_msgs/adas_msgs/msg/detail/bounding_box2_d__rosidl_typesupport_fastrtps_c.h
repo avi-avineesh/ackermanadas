@@ -1,1 +1,0 @@
-/home/khatvangi/adas_ws/build/adas_msgs/rosidl_typesupport_fastrtps_c/adas_msgs/msg/detail/bounding_box2_d__rosidl_typesupport_fastrtps_c.h

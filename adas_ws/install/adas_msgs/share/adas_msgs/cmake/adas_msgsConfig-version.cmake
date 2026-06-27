@@ -1,1 +1,0 @@
-/home/khatvangi/adas_ws/build/adas_msgs/ament_cmake_core/adas_msgsConfig-version.cmake
