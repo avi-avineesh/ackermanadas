@@ -1,7 +1,4 @@
-﻿adas_ws/build/
-adas_ws/install/
-adas_ws/log/
-**/build/
+﻿**/build/
 **/install/
 **/log/
 __pycache__/
