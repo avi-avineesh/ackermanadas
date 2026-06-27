@@ -1,0 +1,119 @@
+[0.000000] (-) TimerEvent: {}
+[0.000080] (-) JobUnselected: {'identifier': 'dashboard'}
+[0.000118] (-) JobUnselected: {'identifier': 'perception'}
+[0.000139] (-) JobUnselected: {'identifier': 'robot_bringup'}
+[0.000157] (adas_core) JobQueued: {'identifier': 'adas_core', 'dependencies': OrderedDict()}
+[0.000648] (adas_core) JobStarted: {'identifier': 'adas_core'}
+[0.009879] (adas_core) JobProgress: {'identifier': 'adas_core', 'progress': 'cmake'}
+[0.010148] (adas_core) Command: {'cmd': ['/usr/bin/cmake', '/home/khatvangi/adas_ws/src/adas_core', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/khatvangi/adas_ws/install/adas_core'], 'cwd': '/home/khatvangi/adas_ws/build/adas_core', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share:/home/khatvangi/project_ws_v2/install/autonomous_car/share:/home/khatvangi/posha_ws/install/posha_moveit_config/share', 'USER': 'khatvangi', 'CLAUDE_CODE_ENTRYPOINT': 'cli', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'GIT_EDITOR': 'true', 'XDG_SESSION_TYPE': 'x11', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/khatvangi', 'OLDPWD': '/home/khatvangi/adas_ws', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '3105', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/khatvangi/adas_ws/install:/home/khatvangi/project_ws_v2/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'khatvangi', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'khatvangi', 'TERM': 'xterm-256color', 'OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE': 'delta', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'WINDOWPATH': '2', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/khatvangi/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/khatvangi-OMEN-by-HP-Laptop-16-b1xxx:@/tmp/.ICE-unix/3060,unix/khatvangi-OMEN-by-HP-Laptop-16-b1xxx:/tmp/.ICE-unix/3060', 'COREPACK_ENABLE_AUTO_PIN': '0', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/b9c0dfc0_9e71_4192_b420_d9d8be94a7cf', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'NoDefaultCurrentDirectoryInExePath': '1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.145', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'ROS_DOMAIN_ID': '42', 'AMENT_PREFIX_PATH': '/home/khatvangi/adas_ws/install/robot_bringup:/home/khatvangi/adas_ws/install/perception:/home/khatvangi/adas_ws/install/dashboard:/home/khatvangi/adas_ws/install/adas_core:/home/khatvangi/project_ws_v2/install/autonomous_car:/home/khatvangi/project_ws_v2/install/adas_core:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'IGN_GAZEBO_RESOURCE_PATH': ':/home/khatvangi/project_ws_v2/install/autonomous_car/share', 'CLAUDECODE': '1', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/khatvangi/adas_ws/build/adas_core', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'CLAUDE_CODE_EXECPATH': '/home/khatvangi/.local/share/claude/versions/2.1.96', 'PYTHONPATH': '/home/khatvangi/adas_ws/build/perception:/home/khatvangi/adas_ws/install/perception/lib/python3.12/site-packages:/home/khatvangi/adas_ws/build/dashboard:/home/khatvangi/adas_ws/install/dashboard/lib/python3.12/site-packages:/home/khatvangi/adas_ws/build/adas_core:/home/khatvangi/adas_ws/install/adas_core/lib/python3.12/site-packages:/home/khatvangi/project_ws_v2/build/adas_core:/home/khatvangi/project_ws_v2/install/adas_core/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/khatvangi/adas_ws/install/robot_bringup:/home/khatvangi/project_ws_v2/install/autonomous_car:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/khatvangi/adas_ws/install/perception:/home/khatvangi/adas_ws/install/dashboard:/home/khatvangi/adas_ws/install/adas_core:/home/khatvangi/project_ws_v2/install/adas_core:/opt/ros/jazzy'}), 'shell': False}
+[0.081975] (adas_core) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[0.099663] (-) TimerEvent: {}
+[0.174489] (adas_core) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[0.199999] (-) TimerEvent: {}
+[0.201647] (adas_core) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.300215] (-) TimerEvent: {}
+[0.338451] (adas_core) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.352407] (adas_core) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.352984] (adas_core) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.353468] (adas_core) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.367920] (adas_core) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.400486] (-) TimerEvent: {}
+[0.500842] (-) TimerEvent: {}
+[0.574132] (adas_core) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.590611] (adas_core) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.591326] (adas_core) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.592129] (adas_core) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.601094] (-) TimerEvent: {}
+[0.605536] (adas_core) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[0.701246] (-) TimerEvent: {}
+[0.801575] (-) TimerEvent: {}
+[0.882330] (adas_core) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[0.901736] (-) TimerEvent: {}
+[0.984436] (adas_core) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[1.001961] (-) TimerEvent: {}
+[1.047596] (adas_core) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)\n'}
+[1.058733] (adas_core) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.102289] (-) TimerEvent: {}
+[1.137406] (adas_core) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.184545] (adas_core) StdoutLine: {'line': b'-- Found rosidl_adapter: 4.6.7 (/opt/ros/jazzy/share/rosidl_adapter/cmake)\n'}
+[1.188744] (adas_core) StdoutLine: {'line': b'-- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)\n'}
+[1.202459] (-) TimerEvent: {}
+[1.216464] (adas_core) StdoutLine: {'line': b'-- Found geometry_msgs: 5.3.6 (/opt/ros/jazzy/share/geometry_msgs/cmake)\n'}
+[1.230060] (adas_core) StdoutLine: {'line': b'-- Found nav_msgs: 5.3.6 (/opt/ros/jazzy/share/nav_msgs/cmake)\n'}
+[1.261108] (adas_core) StdoutLine: {'line': b'-- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)\n'}
+[1.302741] (-) TimerEvent: {}
+[1.403051] (-) TimerEvent: {}
+[1.503326] (-) TimerEvent: {}
+[1.603577] (-) TimerEvent: {}
+[1.704055] (-) TimerEvent: {}
+[1.804357] (-) TimerEvent: {}
+[1.904700] (-) TimerEvent: {}
+[2.004944] (-) TimerEvent: {}
+[2.105236] (-) TimerEvent: {}
+[2.205484] (-) TimerEvent: {}
+[2.275538] (adas_core) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)\n'}
+[2.305734] (-) TimerEvent: {}
+[2.406092] (-) TimerEvent: {}
+[2.506478] (-) TimerEvent: {}
+[2.606859] (-) TimerEvent: {}
+[2.707112] (-) TimerEvent: {}
+[2.807420] (-) TimerEvent: {}
+[2.907691] (-) TimerEvent: {}
+[3.007889] (-) TimerEvent: {}
+[3.108147] (-) TimerEvent: {}
+[3.208546] (-) TimerEvent: {}
+[3.213764] (adas_core) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[3.308744] (-) TimerEvent: {}
+[3.409053] (-) TimerEvent: {}
+[3.509461] (-) TimerEvent: {}
+[3.609742] (-) TimerEvent: {}
+[3.710000] (-) TimerEvent: {}
+[3.810387] (-) TimerEvent: {}
+[3.910715] (-) TimerEvent: {}
+[4.010988] (-) TimerEvent: {}
+[4.111345] (-) TimerEvent: {}
+[4.211624] (-) TimerEvent: {}
+[4.311938] (-) TimerEvent: {}
+[4.413123] (-) TimerEvent: {}
+[4.438344] (adas_core) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[4.446178] (adas_core) StdoutLine: {'line': b'-- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)\n'}
+[4.513277] (-) TimerEvent: {}
+[4.613609] (-) TimerEvent: {}
+[4.706745] (adas_core) StdoutLine: {'line': b'-- Found PythonExtra: /usr/bin/python3  \n'}
+[4.713781] (-) TimerEvent: {}
+[4.814032] (-) TimerEvent: {}
+[4.914222] (-) TimerEvent: {}
+[5.014519] (-) TimerEvent: {}
+[5.114789] (-) TimerEvent: {}
+[5.215019] (-) TimerEvent: {}
+[5.315198] (-) TimerEvent: {}
+[5.415408] (-) TimerEvent: {}
+[5.515652] (-) TimerEvent: {}
+[5.522894] (adas_core) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed \n'}
+[5.613566] (adas_core) StderrLine: {'line': b'CMake Error at /opt/ros/jazzy/share/ament_cmake_python/cmake/ament_python_install_package.cmake:106 (add_custom_target):\n'}
+[5.613890] (adas_core) StderrLine: {'line': b'  add_custom_target cannot create target\n'}
+[5.614046] (adas_core) StderrLine: {'line': b'  "ament_cmake_python_symlink_adas_core" because another target with the same\n'}
+[5.614205] (adas_core) StderrLine: {'line': b'  name already exists.  The existing target is a custom target created in\n'}
+[5.614431] (adas_core) StderrLine: {'line': b'  source directory "/home/khatvangi/adas_ws/src/adas_core".  See\n'}
+[5.614718] (adas_core) StderrLine: {'line': b'  documentation for policy CMP0002 for more details.\n'}
+[5.614922] (adas_core) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[5.615156] (adas_core) StderrLine: {'line': b'  /opt/ros/jazzy/share/ament_cmake_python/cmake/ament_python_install_package.cmake:39 (_ament_cmake_python_install_package)\n'}
+[5.615383] (adas_core) StderrLine: {'line': b'  CMakeLists.txt:27 (ament_python_install_package)\n'}
+[5.615637] (adas_core) StderrLine: {'line': b'\n'}
+[5.615846] (-) TimerEvent: {}
+[5.615890] (adas_core) StderrLine: {'line': b'\n'}
+[5.616102] (adas_core) StderrLine: {'line': b'CMake Error at /opt/ros/jazzy/share/ament_cmake_python/cmake/ament_python_install_package.cmake:144 (add_custom_target):\n'}
+[5.616372] (adas_core) StderrLine: {'line': b'  add_custom_target cannot create target\n'}
+[5.616598] (adas_core) StderrLine: {'line': b'  "ament_cmake_python_build_adas_core_egg" because another target with the\n'}
+[5.616780] (adas_core) StderrLine: {'line': b'  same name already exists.  The existing target is a custom target created\n'}
+[5.616950] (adas_core) StderrLine: {'line': b'  in source directory "/home/khatvangi/adas_ws/src/adas_core".  See\n'}
+[5.617103] (adas_core) StderrLine: {'line': b'  documentation for policy CMP0002 for more details.\n'}
+[5.617232] (adas_core) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[5.617364] (adas_core) StderrLine: {'line': b'  /opt/ros/jazzy/share/ament_cmake_python/cmake/ament_python_install_package.cmake:39 (_ament_cmake_python_install_package)\n'}
+[5.617511] (adas_core) StderrLine: {'line': b'  CMakeLists.txt:27 (ament_python_install_package)\n'}
+[5.617641] (adas_core) StderrLine: {'line': b'\n'}
+[5.617760] (adas_core) StderrLine: {'line': b'\n'}
+[5.623435] (adas_core) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[5.634205] (adas_core) CommandEnded: {'returncode': 1}
+[5.671531] (adas_core) JobEnded: {'identifier': 'adas_core', 'rc': 1}
+[5.682252] (-) EventReactorShutdown: {}

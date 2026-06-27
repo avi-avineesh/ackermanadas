@@ -1,0 +1,18 @@
+[0.808s] Invoking command in '/home/khatvangi/adas_ws/build/perception': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/khatvangi/adas_ws/build/perception/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/khatvangi/adas_ws/install/perception/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/khatvangi/adas_ws/build/perception/build --no-deps symlink_data
+[1.040s] running develop
+[1.186s] running egg_info
+[1.201s] writing perception.egg-info/PKG-INFO
+[1.202s] writing dependency_links to perception.egg-info/dependency_links.txt
+[1.202s] writing entry points to perception.egg-info/entry_points.txt
+[1.202s] writing requirements to perception.egg-info/requires.txt
+[1.202s] writing top-level names to perception.egg-info/top_level.txt
+[1.234s] reading manifest file 'perception.egg-info/SOURCES.txt'
+[1.235s] writing manifest file 'perception.egg-info/SOURCES.txt'
+[1.251s] running build_ext
+[1.251s] Creating /home/khatvangi/adas_ws/install/perception/lib/python3.12/site-packages/perception.egg-link (link to .)
+[1.251s] Installing camera_node script to /home/khatvangi/adas_ws/install/perception/lib/perception
+[1.251s] Installing lidar_node script to /home/khatvangi/adas_ws/install/perception/lib/perception
+[1.251s] 
+[1.252s] Installed /home/khatvangi/adas_ws/build/perception
+[1.252s] running symlink_data
+[1.277s] Invoked command in '/home/khatvangi/adas_ws/build/perception' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/khatvangi/adas_ws/build/perception/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/khatvangi/adas_ws/install/perception/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/khatvangi/adas_ws/build/perception/build --no-deps symlink_data

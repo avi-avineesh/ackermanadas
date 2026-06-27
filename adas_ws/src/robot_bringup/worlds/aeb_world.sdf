@@ -1,0 +1,157 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+  <world name="aeb_world">
+
+    <!-- ═══ PLUGINS ═══ -->
+    <plugin filename="gz-sim-physics-system"          name="gz::sim::systems::Physics"/>
+    <plugin filename="gz-sim-user-commands-system"    name="gz::sim::systems::UserCommands"/>
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
+    <plugin filename="gz-sim-sensors-system"          name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <plugin filename="gz-sim-contact-system"          name="gz::sim::systems::Contact"/>
+
+    <!-- ═══ PHYSICS ═══ -->
+    <physics name="default_physics" type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+    </physics>
+
+    <!-- ═══ SCENE ═══ -->
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.08 0.08 0.12 1</background>
+      <shadows>true</shadows>
+    </scene>
+
+    <!-- ═══ SUN ═══ -->
+    <light name="sun" type="directional">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>0.9 0.9 0.9 1</diffuse>
+      <specular>0.3 0.3 0.3 1</specular>
+      <attenuation><range>1000</range><constant>0.9</constant><linear>0.01</linear><quadratic>0.001</quadratic></attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+
+    <!-- ═══ GROUND PLANE — dark asphalt ═══ -->
+    <model name="ground_plane">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>100 100 0.01</size></box></geometry>
+          <pose>0 0 -0.005 0 0 0</pose>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>100 100 0.01</size></box></geometry>
+          <pose>0 0 -0.005 0 0 0</pose>
+          <material>
+            <ambient>0.12 0.10 0.08 1</ambient>
+            <diffuse>0.18 0.15 0.12 1</diffuse>
+            <specular>0.02 0.02 0.02 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- ═══ AEB ROAD SURFACE — 10m × 0.54m ═══ -->
+    <model name="aeb_road">
+      <static>true</static>
+      <pose>5 0 0.001 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>10 0.54 0.002</size></box></geometry></collision>
+        <visual name="vis">
+          <geometry><box><size>10 0.54 0.002</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- ═══ RIGHT LANE EDGE — solid white ═══ -->
+    <model name="lane_right_solid">
+      <static>true</static>
+      <pose>5 -0.2679 0.002 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>10 0.035 0.002</size></box></geometry></collision>
+        <visual name="vis">
+          <geometry><box><size>10 0.035 0.002</size></box></geometry>
+          <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- ═══ LEFT LANE EDGE — 17 dashes, 0.6m pitch ═══ -->
+    <!-- x = 0.20, 0.80, 1.40, 2.00, 2.60, 3.20, 3.80, 4.40, 5.00, 5.60, 6.20, 6.80, 7.40, 8.00, 8.60, 9.20, 9.80 -->
+    <model name="lane_dash_0">  <static>true</static> <pose>0.20 0.2679 0.002 0 0 0</pose> <link name="l"> <collision name="c"><geometry><box><size>0.4 0.035 0.002</size></box></geometry></collision> <visual name="v"><geometry><box><size>0.4 0.035 0.002</size></box></geometry><material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse></material></visual> </link> </model>
+    <model name="lane_dash_1">  <static>true</static> <pose>0.80 0.2679 0.002 0 0 0</pose> <link name="l"> <collision name="c"><geometry><box><size>0.4 0.035 0.002</size></box></geometry></collision> <visual name="v"><geometry><box><size>0.4 0.035 0.002</size></box></geometry><material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse></material></visual> </link> </model>
+    <model name="lane_dash_2">  <static>true</static> <pose>1.40 0.2679 0.002 0 0 0</pose> <link name="l"> <collision name="c"><geometry><box><size>0.4 0.035 0.002</size></box></geometry></collision> <visual name="v"><geometry><box><size>0.4 0.035 0.002</size></box></geometry><material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse></material></visual> </link> </model>
+    <model name="lane_dash_3">  <static>true</static> <pose>2.00 0.2679 0.002 0 0 0</pose> <link name="l"> <collision name="c"><geometry><box><size>0.4 0.035 0.002</size></box></geometry></collision> <visual name="v"><geometry><box><size>0.4 0.035 0.002</size></box></geometry><material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse></material></visual> </link> </model>
+    <model name="lane_dash_4">  <static>true</static> <pose>2.60 0.2679 0.002 0 0 0</pose> <link name="l"> <collision name="c"><geometry><box><size>0.4 0.035 0.002</size></box></geometry></collision> <visual name="v"><geometry><box><size>0.4 0.035 0.002</size></box></geometry><material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse></material></visual> </link> </model>
+    <model name="lane_dash_5">  <static>true</static> <pose>3.20 0.2679 0.002 0 0 0</pose> <link name="l"> <collision name="c"><geometry><box><size>0.4 0.035 0.002</size></box></geometry></collision> <visual name="v"><geometry><box><size>0.4 0.035 0.002</size></box></geometry><material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse></material></visual> </link> </model>
+    <model name="lane_dash_6">  <static>true</static> <pose>3.80 0.2679 0.002 0 0 0</pose> <link name="l"> <collision name="c"><geometry><box><size>0.4 0.035 0.002</size></box></geometry></collision> <visual name="v"><geometry><box><size>0.4 0.035 0.002</size></box></geometry><material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse></material></visual> </link> </model>
+    <model name="lane_dash_7">  <static>true</static> <pose>4.40 0.2679 0.002 0 0 0</pose> <link name="l"> <collision name="c"><geometry><box><size>0.4 0.035 0.002</size></box></geometry></collision> <visual name="v"><geometry><box><size>0.4 0.035 0.002</size></box></geometry><material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse></material></visual> </link> </model>
+    <model name="lane_dash_8">  <static>true</static> <pose>5.00 0.2679 0.002 0 0 0</pose> <link name="l"> <collision name="c"><geometry><box><size>0.4 0.035 0.002</size></box></geometry></collision> <visual name="v"><geometry><box><size>0.4 0.035 0.002</size></box></geometry><material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse></material></visual> </link> </model>
+    <model name="lane_dash_9">  <static>true</static> <pose>5.60 0.2679 0.002 0 0 0</pose> <link name="l"> <collision name="c"><geometry><box><size>0.4 0.035 0.002</size></box></geometry></collision> <visual name="v"><geometry><box><size>0.4 0.035 0.002</size></box></geometry><material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse></material></visual> </link> </model>
+    <model name="lane_dash_10"> <static>true</static> <pose>6.20 0.2679 0.002 0 0 0</pose> <link name="l"> <collision name="c"><geometry><box><size>0.4 0.035 0.002</size></box></geometry></collision> <visual name="v"><geometry><box><size>0.4 0.035 0.002</size></box></geometry><material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse></material></visual> </link> </model>
+    <model name="lane_dash_11"> <static>true</static> <pose>6.80 0.2679 0.002 0 0 0</pose> <link name="l"> <collision name="c"><geometry><box><size>0.4 0.035 0.002</size></box></geometry></collision> <visual name="v"><geometry><box><size>0.4 0.035 0.002</size></box></geometry><material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse></material></visual> </link> </model>
+    <model name="lane_dash_12"> <static>true</static> <pose>7.40 0.2679 0.002 0 0 0</pose> <link name="l"> <collision name="c"><geometry><box><size>0.4 0.035 0.002</size></box></geometry></collision> <visual name="v"><geometry><box><size>0.4 0.035 0.002</size></box></geometry><material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse></material></visual> </link> </model>
+    <model name="lane_dash_13"> <static>true</static> <pose>8.00 0.2679 0.002 0 0 0</pose> <link name="l"> <collision name="c"><geometry><box><size>0.4 0.035 0.002</size></box></geometry></collision> <visual name="v"><geometry><box><size>0.4 0.035 0.002</size></box></geometry><material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse></material></visual> </link> </model>
+    <model name="lane_dash_14"> <static>true</static> <pose>8.60 0.2679 0.002 0 0 0</pose> <link name="l"> <collision name="c"><geometry><box><size>0.4 0.035 0.002</size></box></geometry></collision> <visual name="v"><geometry><box><size>0.4 0.035 0.002</size></box></geometry><material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse></material></visual> </link> </model>
+    <model name="lane_dash_15"> <static>true</static> <pose>9.20 0.2679 0.002 0 0 0</pose> <link name="l"> <collision name="c"><geometry><box><size>0.4 0.035 0.002</size></box></geometry></collision> <visual name="v"><geometry><box><size>0.4 0.035 0.002</size></box></geometry><material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse></material></visual> </link> </model>
+    <model name="lane_dash_16"> <static>true</static> <pose>9.80 0.2679 0.002 0 0 0</pose> <link name="l"> <collision name="c"><geometry><box><size>0.4 0.035 0.002</size></box></geometry></collision> <visual name="v"><geometry><box><size>0.4 0.035 0.002</size></box></geometry><material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse></material></visual> </link> </model>
+
+    <!-- ═══ START MARKER — green ═══ -->
+    <model name="start_marker">
+      <static>true</static>
+      <pose>0.05 0 0.04 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.05 0.54 0.08</size></box></geometry></collision>
+        <visual name="vis">
+          <geometry><box><size>0.05 0.54 0.08</size></box></geometry>
+          <material><ambient>0 0.8 0 1</ambient><diffuse>0 1 0 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- ═══ CAR OBSTACLE — rear of stopped car ═══
+         Rear of stopped car. YOLO11n COCO car(id=2). Hard stop x=6.65m.
+         Dark body + red emissive tail lights → triggers YOLO11n car class. -->
+    <model name="car_obstacle">
+      <static>true</static>
+      <pose>8.5 0 0.18 0 0 0</pose>
+      <link name="body">
+        <collision name="body_col">
+          <geometry><box><size>0.20 0.40 0.36</size></box></geometry>
+        </collision>
+        <visual name="body_vis">
+          <geometry><box><size>0.20 0.40 0.36</size></box></geometry>
+          <material>
+            <ambient>0.06 0.06 0.06 1</ambient>
+            <diffuse>0.10 0.10 0.10 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+      </link>
+      <link name="tail_lights">
+        <pose>-0.105 0 0.10 0 0 0</pose>
+        <collision name="tl_col">
+          <geometry><box><size>0.005 0.35 0.04</size></box></geometry>
+        </collision>
+        <visual name="tl_vis">
+          <geometry><box><size>0.005 0.35 0.04</size></box></geometry>
+          <material>
+            <ambient>0.9 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <specular>0.1 0 0 1</specular>
+            <emissive>0.6 0 0 1</emissive>
+          </material>
+        </visual>
+      </link>
+      <joint name="tl_joint" type="fixed">
+        <parent>body</parent>
+        <child>tail_lights</child>
+      </joint>
+    </model>
+
+  </world>
+</sdf>

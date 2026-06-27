@@ -1,0 +1,2744 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+  <world name="lka_world">
+
+    <physics name="1ms" type="ignored">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+    </physics>
+    <plugin filename="gz-sim-physics-system"           name="gz::sim::systems::Physics"/>
+    <plugin filename="gz-sim-user-commands-system"     name="gz::sim::systems::UserCommands"/>
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
+    <plugin filename="gz-sim-sensors-system"           name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <plugin filename="gz-sim-contact-system"           name="gz::sim::systems::Contact"/>
+
+    <light type="directional" name="sun">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>0.9 0.9 0.9 1</diffuse>
+      <specular>0.3 0.3 0.3 1</specular>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+
+    <model name="ground_plane"><static>true</static><link name="link">
+      <collision name="col"><geometry><plane><normal>0 0 1</normal><size>100 100</size></plane></geometry>
+        <surface><friction><ode><mu>0.8</mu><mu2>0.8</mu2></ode></friction></surface></collision>
+      <visual name="vis"><geometry><plane><normal>0 0 1</normal><size>100 100</size></plane></geometry>
+        <material><ambient>0.45 0.28 0.10 1</ambient><diffuse>0.55 0.35 0.15 1</diffuse></material></visual>
+    </link></model>
+
+    <model name="s1_road"><static>true</static>
+      <pose>1.000000 0.000000 0.001000 0.000000 0.000000 0.000000</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>2.000000 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>2.000000 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="s1_left"><static>true</static>
+      <pose>1.000000 0.330000 0.002000 0.000000 0.000000 0.000000</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>2.000000 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>2.000000 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="s1_right"><static>true</static>
+      <pose>1.000000 -0.330000 0.002000 0.000000 0.000000 0.000000</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>2.000000 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>2.000000 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_road_0"><static>true</static>
+      <pose>2.031250 0.017174 0.001000 0.000000 0.000000 0.502158</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077296 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077296 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_left_0"><static>true</static>
+      <pose>1.872415 0.306434 0.002000 0.000000 0.000000 0.502158</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077296 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077296 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_right_0"><static>true</static>
+      <pose>2.190085 -0.272086 0.002000 0.000000 0.000000 0.502158</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077296 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077296 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_road_1"><static>true</static>
+      <pose>2.093750 0.051356 0.001000 0.000000 0.000000 0.498086</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077138 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077138 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_left_1"><static>true</static>
+      <pose>1.936094 0.341260 0.002000 0.000000 0.000000 0.498086</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077138 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077138 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_right_1"><static>true</static>
+      <pose>2.251406 -0.238549 0.002000 0.000000 0.000000 0.498086</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077138 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077138 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_road_2"><static>true</static>
+      <pose>2.156250 0.085043 0.001000 0.000000 0.000000 0.489927</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076826 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076826 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_left_2"><static>true</static>
+      <pose>2.000965 0.376224 0.002000 0.000000 0.000000 0.489927</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076826 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076826 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_right_2"><static>true</static>
+      <pose>2.311535 -0.206138 0.002000 0.000000 0.000000 0.489927</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076826 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076826 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_road_3"><static>true</static>
+      <pose>2.218750 0.117911 0.001000 0.000000 0.000000 0.477654</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076371 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076371 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_left_3"><static>true</static>
+      <pose>2.067050 0.410976 0.002000 0.000000 0.000000 0.477654</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076371 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076371 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_right_3"><static>true</static>
+      <pose>2.370450 -0.175154 0.002000 0.000000 0.000000 0.477654</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076371 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076371 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_road_4"><static>true</static>
+      <pose>2.281250 0.149644 0.001000 0.000000 0.000000 0.461234</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075788 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075788 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_left_4"><static>true</static>
+      <pose>2.134382 0.445161 0.002000 0.000000 0.000000 0.461234</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075788 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075788 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_right_4"><static>true</static>
+      <pose>2.428118 -0.145872 0.002000 0.000000 0.000000 0.461234</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075788 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075788 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_road_5"><static>true</static>
+      <pose>2.343750 0.179936 0.001000 0.000000 0.000000 0.440632</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075095 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075095 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_left_5"><static>true</static>
+      <pose>2.203001 0.478415 0.002000 0.000000 0.000000 0.440632</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075095 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075095 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_right_5"><static>true</static>
+      <pose>2.484499 -0.118543 0.002000 0.000000 0.000000 0.440632</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075095 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075095 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_road_6"><static>true</static>
+      <pose>2.406250 0.208495 0.001000 0.000000 0.000000 0.415829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.074318 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.074318 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_left_6"><static>true</static>
+      <pose>2.272947 0.510373 0.002000 0.000000 0.000000 0.415829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.074318 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.074318 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_right_6"><static>true</static>
+      <pose>2.539553 -0.093383 0.002000 0.000000 0.000000 0.415829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.074318 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.074318 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_road_7"><static>true</static>
+      <pose>2.468750 0.235046 0.001000 0.000000 0.000000 0.386829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.073483 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.073483 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_left_7"><static>true</static>
+      <pose>2.344256 0.540662 0.002000 0.000000 0.000000 0.386829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.073483 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.073483 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_right_7"><static>true</static>
+      <pose>2.593244 -0.070571 0.002000 0.000000 0.000000 0.386829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.073483 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.073483 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_road_8"><static>true</static>
+      <pose>2.531250 0.259333 0.001000 0.000000 0.000000 0.353679</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.072621 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.072621 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_left_8"><static>true</static>
+      <pose>2.416954 0.568908 0.002000 0.000000 0.000000 0.353679</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.072621 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.072621 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_right_8"><static>true</static>
+      <pose>2.645546 -0.050242 0.002000 0.000000 0.000000 0.353679</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.072621 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.072621 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_road_9"><static>true</static>
+      <pose>2.593750 0.281123 0.001000 0.000000 0.000000 0.316489</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.071764 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.071764 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_left_9"><static>true</static>
+      <pose>2.491043 0.594733 0.002000 0.000000 0.000000 0.316489</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.071764 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.071764 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_right_9"><static>true</static>
+      <pose>2.696457 -0.032488 0.002000 0.000000 0.000000 0.316489</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.071764 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.071764 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_road_10"><static>true</static>
+      <pose>2.656250 0.300205 0.001000 0.000000 0.000000 0.275453</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070947 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070947 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_left_10"><static>true</static>
+      <pose>2.566496 0.617765 0.002000 0.000000 0.000000 0.275453</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070947 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070947 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_right_10"><static>true</static>
+      <pose>2.746004 -0.017355 0.002000 0.000000 0.000000 0.275453</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070947 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070947 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_road_11"><static>true</static>
+      <pose>2.718750 0.316396 0.001000 0.000000 0.000000 0.230866</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070202 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070202 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_left_11"><static>true</static>
+      <pose>2.643239 0.637641 0.002000 0.000000 0.000000 0.230866</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070202 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070202 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_right_11"><static>true</static>
+      <pose>2.794261 -0.004848 0.002000 0.000000 0.000000 0.230866</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070202 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070202 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_road_12"><static>true</static>
+      <pose>2.781250 0.329540 0.001000 0.000000 0.000000 0.183137</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069562 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069562 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_left_12"><static>true</static>
+      <pose>2.721152 0.654022 0.002000 0.000000 0.000000 0.183137</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069562 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069562 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_right_12"><static>true</static>
+      <pose>2.841348 0.005059 0.002000 0.000000 0.000000 0.183137</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069562 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069562 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_road_13"><static>true</static>
+      <pose>2.843750 0.339511 0.001000 0.000000 0.000000 0.132797</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069055 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069055 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_left_13"><static>true</static>
+      <pose>2.800056 0.666605 0.002000 0.000000 0.000000 0.132797</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069055 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069055 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_right_13"><static>true</static>
+      <pose>2.887444 0.012416 0.002000 0.000000 0.000000 0.132797</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069055 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069055 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_road_14"><static>true</static>
+      <pose>2.906250 0.346212 0.001000 0.000000 0.000000 0.080494</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068703 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068703 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_left_14"><static>true</static>
+      <pose>2.879716 0.675143 0.002000 0.000000 0.000000 0.080494</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068703 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068703 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_right_14"><static>true</static>
+      <pose>2.932784 0.017280 0.002000 0.000000 0.000000 0.080494</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068703 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068703 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_road_15"><static>true</static>
+      <pose>2.968750 0.349578 0.001000 0.000000 0.000000 0.026969</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068523 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068523 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_left_15"><static>true</static>
+      <pose>2.959851 0.679458 0.002000 0.000000 0.000000 0.026969</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068523 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068523 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_right_15"><static>true</static>
+      <pose>2.977649 0.019698 0.002000 0.000000 0.000000 0.026969</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068523 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068523 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_road_16"><static>true</static>
+      <pose>3.031250 0.349578 0.001000 0.000000 0.000000 -0.026969</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068523 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068523 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_left_16"><static>true</static>
+      <pose>3.040149 0.679458 0.002000 0.000000 0.000000 -0.026969</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068523 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068523 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_right_16"><static>true</static>
+      <pose>3.022351 0.019698 0.002000 0.000000 0.000000 -0.026969</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068523 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068523 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_road_17"><static>true</static>
+      <pose>3.093750 0.346212 0.001000 0.000000 0.000000 -0.080494</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068703 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068703 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_left_17"><static>true</static>
+      <pose>3.120284 0.675143 0.002000 0.000000 0.000000 -0.080494</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068703 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068703 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_right_17"><static>true</static>
+      <pose>3.067216 0.017280 0.002000 0.000000 0.000000 -0.080494</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068703 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068703 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_road_18"><static>true</static>
+      <pose>3.156250 0.339511 0.001000 0.000000 0.000000 -0.132797</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069055 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069055 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_left_18"><static>true</static>
+      <pose>3.199944 0.666605 0.002000 0.000000 0.000000 -0.132797</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069055 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069055 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_right_18"><static>true</static>
+      <pose>3.112556 0.012416 0.002000 0.000000 0.000000 -0.132797</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069055 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069055 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_road_19"><static>true</static>
+      <pose>3.218750 0.329540 0.001000 0.000000 0.000000 -0.183137</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069562 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069562 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_left_19"><static>true</static>
+      <pose>3.278848 0.654022 0.002000 0.000000 0.000000 -0.183137</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069562 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069562 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_right_19"><static>true</static>
+      <pose>3.158652 0.005059 0.002000 0.000000 0.000000 -0.183137</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069562 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069562 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_road_20"><static>true</static>
+      <pose>3.281250 0.316396 0.001000 0.000000 0.000000 -0.230866</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070202 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070202 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_left_20"><static>true</static>
+      <pose>3.356761 0.637641 0.002000 0.000000 0.000000 -0.230866</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070202 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070202 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_right_20"><static>true</static>
+      <pose>3.205739 -0.004848 0.002000 0.000000 0.000000 -0.230866</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070202 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070202 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_road_21"><static>true</static>
+      <pose>3.343750 0.300205 0.001000 0.000000 0.000000 -0.275453</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070947 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070947 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_left_21"><static>true</static>
+      <pose>3.433504 0.617765 0.002000 0.000000 0.000000 -0.275453</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070947 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070947 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_right_21"><static>true</static>
+      <pose>3.253996 -0.017355 0.002000 0.000000 0.000000 -0.275453</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070947 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070947 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_road_22"><static>true</static>
+      <pose>3.406250 0.281123 0.001000 0.000000 0.000000 -0.316489</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.071764 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.071764 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_left_22"><static>true</static>
+      <pose>3.508957 0.594733 0.002000 0.000000 0.000000 -0.316489</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.071764 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.071764 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_right_22"><static>true</static>
+      <pose>3.303543 -0.032488 0.002000 0.000000 0.000000 -0.316489</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.071764 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.071764 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_road_23"><static>true</static>
+      <pose>3.468750 0.259333 0.001000 0.000000 0.000000 -0.353679</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.072621 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.072621 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_left_23"><static>true</static>
+      <pose>3.583046 0.568908 0.002000 0.000000 0.000000 -0.353679</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.072621 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.072621 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_right_23"><static>true</static>
+      <pose>3.354454 -0.050242 0.002000 0.000000 0.000000 -0.353679</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.072621 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.072621 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_road_24"><static>true</static>
+      <pose>3.531250 0.235046 0.001000 0.000000 0.000000 -0.386829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.073483 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.073483 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_left_24"><static>true</static>
+      <pose>3.655744 0.540662 0.002000 0.000000 0.000000 -0.386829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.073483 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.073483 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_right_24"><static>true</static>
+      <pose>3.406756 -0.070571 0.002000 0.000000 0.000000 -0.386829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.073483 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.073483 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_road_25"><static>true</static>
+      <pose>3.593750 0.208495 0.001000 0.000000 0.000000 -0.415829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.074318 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.074318 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_left_25"><static>true</static>
+      <pose>3.727053 0.510373 0.002000 0.000000 0.000000 -0.415829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.074318 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.074318 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_right_25"><static>true</static>
+      <pose>3.460447 -0.093383 0.002000 0.000000 0.000000 -0.415829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.074318 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.074318 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_road_26"><static>true</static>
+      <pose>3.656250 0.179936 0.001000 0.000000 0.000000 -0.440632</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075095 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075095 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_left_26"><static>true</static>
+      <pose>3.796999 0.478415 0.002000 0.000000 0.000000 -0.440632</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075095 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075095 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_right_26"><static>true</static>
+      <pose>3.515501 -0.118543 0.002000 0.000000 0.000000 -0.440632</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075095 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075095 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_road_27"><static>true</static>
+      <pose>3.718750 0.149644 0.001000 0.000000 0.000000 -0.461234</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075788 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075788 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_left_27"><static>true</static>
+      <pose>3.865618 0.445161 0.002000 0.000000 0.000000 -0.461234</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075788 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075788 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_right_27"><static>true</static>
+      <pose>3.571882 -0.145872 0.002000 0.000000 0.000000 -0.461234</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075788 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075788 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_road_28"><static>true</static>
+      <pose>3.781250 0.117911 0.001000 0.000000 0.000000 -0.477654</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076371 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076371 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_left_28"><static>true</static>
+      <pose>3.932950 0.410976 0.002000 0.000000 0.000000 -0.477654</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076371 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076371 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_right_28"><static>true</static>
+      <pose>3.629550 -0.175154 0.002000 0.000000 0.000000 -0.477654</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076371 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076371 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_road_29"><static>true</static>
+      <pose>3.843750 0.085043 0.001000 0.000000 0.000000 -0.489927</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076826 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076826 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_left_29"><static>true</static>
+      <pose>3.999035 0.376224 0.002000 0.000000 0.000000 -0.489927</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076826 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076826 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_right_29"><static>true</static>
+      <pose>3.688465 -0.206138 0.002000 0.000000 0.000000 -0.489927</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076826 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076826 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_road_30"><static>true</static>
+      <pose>3.906250 0.051356 0.001000 0.000000 0.000000 -0.498086</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077138 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077138 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_left_30"><static>true</static>
+      <pose>4.063906 0.341260 0.002000 0.000000 0.000000 -0.498086</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077138 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077138 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_right_30"><static>true</static>
+      <pose>3.748594 -0.238549 0.002000 0.000000 0.000000 -0.498086</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077138 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077138 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_road_31"><static>true</static>
+      <pose>3.968750 0.017174 0.001000 0.000000 0.000000 -0.502158</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077296 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077296 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_left_31"><static>true</static>
+      <pose>4.127585 0.306434 0.002000 0.000000 0.000000 -0.502158</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077296 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077296 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c1_right_31"><static>true</static>
+      <pose>3.809915 -0.272086 0.002000 0.000000 0.000000 -0.502158</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077296 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077296 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="s2_road"><static>true</static>
+      <pose>5.000000 0.000000 0.001000 0.000000 0.000000 0.000000</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>2.000000 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>2.000000 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="s2_left"><static>true</static>
+      <pose>5.000000 0.330000 0.002000 0.000000 0.000000 0.000000</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>2.000000 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>2.000000 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="s2_right"><static>true</static>
+      <pose>5.000000 -0.330000 0.002000 0.000000 0.000000 0.000000</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>2.000000 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>2.000000 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_road_0"><static>true</static>
+      <pose>6.031250 -0.017174 0.001000 0.000000 0.000000 -0.502158</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077296 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077296 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_left_0"><static>true</static>
+      <pose>6.190085 0.272086 0.002000 0.000000 0.000000 -0.502158</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077296 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077296 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_right_0"><static>true</static>
+      <pose>5.872415 -0.306434 0.002000 0.000000 0.000000 -0.502158</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077296 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077296 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_road_1"><static>true</static>
+      <pose>6.093750 -0.051356 0.001000 0.000000 0.000000 -0.498086</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077138 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077138 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_left_1"><static>true</static>
+      <pose>6.251406 0.238549 0.002000 0.000000 0.000000 -0.498086</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077138 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077138 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_right_1"><static>true</static>
+      <pose>5.936094 -0.341260 0.002000 0.000000 0.000000 -0.498086</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077138 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077138 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_road_2"><static>true</static>
+      <pose>6.156250 -0.085043 0.001000 0.000000 0.000000 -0.489927</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076826 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076826 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_left_2"><static>true</static>
+      <pose>6.311535 0.206138 0.002000 0.000000 0.000000 -0.489927</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076826 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076826 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_right_2"><static>true</static>
+      <pose>6.000965 -0.376224 0.002000 0.000000 0.000000 -0.489927</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076826 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076826 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_road_3"><static>true</static>
+      <pose>6.218750 -0.117911 0.001000 0.000000 0.000000 -0.477654</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076371 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076371 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_left_3"><static>true</static>
+      <pose>6.370450 0.175154 0.002000 0.000000 0.000000 -0.477654</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076371 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076371 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_right_3"><static>true</static>
+      <pose>6.067050 -0.410976 0.002000 0.000000 0.000000 -0.477654</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076371 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076371 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_road_4"><static>true</static>
+      <pose>6.281250 -0.149644 0.001000 0.000000 0.000000 -0.461234</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075788 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075788 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_left_4"><static>true</static>
+      <pose>6.428118 0.145872 0.002000 0.000000 0.000000 -0.461234</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075788 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075788 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_right_4"><static>true</static>
+      <pose>6.134382 -0.445161 0.002000 0.000000 0.000000 -0.461234</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075788 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075788 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_road_5"><static>true</static>
+      <pose>6.343750 -0.179936 0.001000 0.000000 0.000000 -0.440632</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075095 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075095 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_left_5"><static>true</static>
+      <pose>6.484499 0.118543 0.002000 0.000000 0.000000 -0.440632</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075095 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075095 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_right_5"><static>true</static>
+      <pose>6.203001 -0.478415 0.002000 0.000000 0.000000 -0.440632</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075095 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075095 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_road_6"><static>true</static>
+      <pose>6.406250 -0.208495 0.001000 0.000000 0.000000 -0.415829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.074318 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.074318 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_left_6"><static>true</static>
+      <pose>6.539553 0.093383 0.002000 0.000000 0.000000 -0.415829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.074318 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.074318 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_right_6"><static>true</static>
+      <pose>6.272947 -0.510373 0.002000 0.000000 0.000000 -0.415829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.074318 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.074318 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_road_7"><static>true</static>
+      <pose>6.468750 -0.235046 0.001000 0.000000 0.000000 -0.386829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.073483 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.073483 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_left_7"><static>true</static>
+      <pose>6.593244 0.070571 0.002000 0.000000 0.000000 -0.386829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.073483 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.073483 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_right_7"><static>true</static>
+      <pose>6.344256 -0.540662 0.002000 0.000000 0.000000 -0.386829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.073483 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.073483 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_road_8"><static>true</static>
+      <pose>6.531250 -0.259333 0.001000 0.000000 0.000000 -0.353679</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.072621 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.072621 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_left_8"><static>true</static>
+      <pose>6.645546 0.050242 0.002000 0.000000 0.000000 -0.353679</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.072621 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.072621 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_right_8"><static>true</static>
+      <pose>6.416954 -0.568908 0.002000 0.000000 0.000000 -0.353679</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.072621 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.072621 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_road_9"><static>true</static>
+      <pose>6.593750 -0.281123 0.001000 0.000000 0.000000 -0.316489</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.071764 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.071764 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_left_9"><static>true</static>
+      <pose>6.696457 0.032488 0.002000 0.000000 0.000000 -0.316489</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.071764 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.071764 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_right_9"><static>true</static>
+      <pose>6.491043 -0.594733 0.002000 0.000000 0.000000 -0.316489</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.071764 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.071764 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_road_10"><static>true</static>
+      <pose>6.656250 -0.300205 0.001000 0.000000 0.000000 -0.275453</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070947 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070947 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_left_10"><static>true</static>
+      <pose>6.746004 0.017355 0.002000 0.000000 0.000000 -0.275453</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070947 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070947 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_right_10"><static>true</static>
+      <pose>6.566496 -0.617765 0.002000 0.000000 0.000000 -0.275453</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070947 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070947 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_road_11"><static>true</static>
+      <pose>6.718750 -0.316396 0.001000 0.000000 0.000000 -0.230866</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070202 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070202 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_left_11"><static>true</static>
+      <pose>6.794261 0.004848 0.002000 0.000000 0.000000 -0.230866</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070202 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070202 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_right_11"><static>true</static>
+      <pose>6.643239 -0.637641 0.002000 0.000000 0.000000 -0.230866</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070202 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070202 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_road_12"><static>true</static>
+      <pose>6.781250 -0.329540 0.001000 0.000000 0.000000 -0.183137</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069562 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069562 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_left_12"><static>true</static>
+      <pose>6.841348 -0.005059 0.002000 0.000000 0.000000 -0.183137</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069562 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069562 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_right_12"><static>true</static>
+      <pose>6.721152 -0.654022 0.002000 0.000000 0.000000 -0.183137</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069562 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069562 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_road_13"><static>true</static>
+      <pose>6.843750 -0.339511 0.001000 0.000000 0.000000 -0.132797</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069055 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069055 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_left_13"><static>true</static>
+      <pose>6.887444 -0.012416 0.002000 0.000000 0.000000 -0.132797</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069055 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069055 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_right_13"><static>true</static>
+      <pose>6.800056 -0.666605 0.002000 0.000000 0.000000 -0.132797</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069055 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069055 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_road_14"><static>true</static>
+      <pose>6.906250 -0.346212 0.001000 0.000000 0.000000 -0.080494</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068703 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068703 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_left_14"><static>true</static>
+      <pose>6.932784 -0.017280 0.002000 0.000000 0.000000 -0.080494</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068703 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068703 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_right_14"><static>true</static>
+      <pose>6.879716 -0.675143 0.002000 0.000000 0.000000 -0.080494</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068703 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068703 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_road_15"><static>true</static>
+      <pose>6.968750 -0.349578 0.001000 0.000000 0.000000 -0.026969</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068523 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068523 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_left_15"><static>true</static>
+      <pose>6.977649 -0.019698 0.002000 0.000000 0.000000 -0.026969</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068523 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068523 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_right_15"><static>true</static>
+      <pose>6.959851 -0.679458 0.002000 0.000000 0.000000 -0.026969</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068523 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068523 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_road_16"><static>true</static>
+      <pose>7.031250 -0.349578 0.001000 0.000000 0.000000 0.026969</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068523 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068523 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_left_16"><static>true</static>
+      <pose>7.022351 -0.019698 0.002000 0.000000 0.000000 0.026969</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068523 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068523 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_right_16"><static>true</static>
+      <pose>7.040149 -0.679458 0.002000 0.000000 0.000000 0.026969</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068523 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068523 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_road_17"><static>true</static>
+      <pose>7.093750 -0.346212 0.001000 0.000000 0.000000 0.080494</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068703 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068703 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_left_17"><static>true</static>
+      <pose>7.067216 -0.017280 0.002000 0.000000 0.000000 0.080494</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068703 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068703 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_right_17"><static>true</static>
+      <pose>7.120284 -0.675143 0.002000 0.000000 0.000000 0.080494</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068703 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068703 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_road_18"><static>true</static>
+      <pose>7.156250 -0.339511 0.001000 0.000000 0.000000 0.132797</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069055 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069055 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_left_18"><static>true</static>
+      <pose>7.112556 -0.012416 0.002000 0.000000 0.000000 0.132797</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069055 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069055 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_right_18"><static>true</static>
+      <pose>7.199944 -0.666605 0.002000 0.000000 0.000000 0.132797</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069055 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069055 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_road_19"><static>true</static>
+      <pose>7.218750 -0.329540 0.001000 0.000000 0.000000 0.183137</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069562 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069562 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_left_19"><static>true</static>
+      <pose>7.158652 -0.005059 0.002000 0.000000 0.000000 0.183137</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069562 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069562 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_right_19"><static>true</static>
+      <pose>7.278848 -0.654022 0.002000 0.000000 0.000000 0.183137</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069562 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069562 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_road_20"><static>true</static>
+      <pose>7.281250 -0.316396 0.001000 0.000000 0.000000 0.230866</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070202 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070202 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_left_20"><static>true</static>
+      <pose>7.205739 0.004848 0.002000 0.000000 0.000000 0.230866</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070202 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070202 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_right_20"><static>true</static>
+      <pose>7.356761 -0.637641 0.002000 0.000000 0.000000 0.230866</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070202 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070202 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_road_21"><static>true</static>
+      <pose>7.343750 -0.300205 0.001000 0.000000 0.000000 0.275453</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070947 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070947 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_left_21"><static>true</static>
+      <pose>7.253996 0.017355 0.002000 0.000000 0.000000 0.275453</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070947 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070947 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_right_21"><static>true</static>
+      <pose>7.433504 -0.617765 0.002000 0.000000 0.000000 0.275453</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070947 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070947 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_road_22"><static>true</static>
+      <pose>7.406250 -0.281123 0.001000 0.000000 0.000000 0.316489</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.071764 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.071764 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_left_22"><static>true</static>
+      <pose>7.303543 0.032488 0.002000 0.000000 0.000000 0.316489</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.071764 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.071764 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_right_22"><static>true</static>
+      <pose>7.508957 -0.594733 0.002000 0.000000 0.000000 0.316489</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.071764 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.071764 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_road_23"><static>true</static>
+      <pose>7.468750 -0.259333 0.001000 0.000000 0.000000 0.353679</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.072621 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.072621 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_left_23"><static>true</static>
+      <pose>7.354454 0.050242 0.002000 0.000000 0.000000 0.353679</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.072621 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.072621 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_right_23"><static>true</static>
+      <pose>7.583046 -0.568908 0.002000 0.000000 0.000000 0.353679</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.072621 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.072621 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_road_24"><static>true</static>
+      <pose>7.531250 -0.235046 0.001000 0.000000 0.000000 0.386829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.073483 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.073483 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_left_24"><static>true</static>
+      <pose>7.406756 0.070571 0.002000 0.000000 0.000000 0.386829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.073483 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.073483 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_right_24"><static>true</static>
+      <pose>7.655744 -0.540662 0.002000 0.000000 0.000000 0.386829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.073483 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.073483 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_road_25"><static>true</static>
+      <pose>7.593750 -0.208495 0.001000 0.000000 0.000000 0.415829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.074318 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.074318 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_left_25"><static>true</static>
+      <pose>7.460447 0.093383 0.002000 0.000000 0.000000 0.415829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.074318 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.074318 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_right_25"><static>true</static>
+      <pose>7.727053 -0.510373 0.002000 0.000000 0.000000 0.415829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.074318 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.074318 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_road_26"><static>true</static>
+      <pose>7.656250 -0.179936 0.001000 0.000000 0.000000 0.440632</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075095 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075095 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_left_26"><static>true</static>
+      <pose>7.515501 0.118543 0.002000 0.000000 0.000000 0.440632</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075095 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075095 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_right_26"><static>true</static>
+      <pose>7.796999 -0.478415 0.002000 0.000000 0.000000 0.440632</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075095 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075095 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_road_27"><static>true</static>
+      <pose>7.718750 -0.149644 0.001000 0.000000 0.000000 0.461234</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075788 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075788 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_left_27"><static>true</static>
+      <pose>7.571882 0.145872 0.002000 0.000000 0.000000 0.461234</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075788 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075788 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_right_27"><static>true</static>
+      <pose>7.865618 -0.445161 0.002000 0.000000 0.000000 0.461234</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075788 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075788 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_road_28"><static>true</static>
+      <pose>7.781250 -0.117911 0.001000 0.000000 0.000000 0.477654</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076371 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076371 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_left_28"><static>true</static>
+      <pose>7.629550 0.175154 0.002000 0.000000 0.000000 0.477654</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076371 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076371 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_right_28"><static>true</static>
+      <pose>7.932950 -0.410976 0.002000 0.000000 0.000000 0.477654</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076371 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076371 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_road_29"><static>true</static>
+      <pose>7.843750 -0.085043 0.001000 0.000000 0.000000 0.489927</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076826 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076826 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_left_29"><static>true</static>
+      <pose>7.688465 0.206138 0.002000 0.000000 0.000000 0.489927</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076826 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076826 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_right_29"><static>true</static>
+      <pose>7.999035 -0.376224 0.002000 0.000000 0.000000 0.489927</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076826 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076826 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_road_30"><static>true</static>
+      <pose>7.906250 -0.051356 0.001000 0.000000 0.000000 0.498086</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077138 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077138 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_left_30"><static>true</static>
+      <pose>7.748594 0.238549 0.002000 0.000000 0.000000 0.498086</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077138 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077138 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_right_30"><static>true</static>
+      <pose>8.063906 -0.341260 0.002000 0.000000 0.000000 0.498086</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077138 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077138 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_road_31"><static>true</static>
+      <pose>7.968750 -0.017174 0.001000 0.000000 0.000000 0.502158</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077296 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077296 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_left_31"><static>true</static>
+      <pose>7.809915 0.272086 0.002000 0.000000 0.000000 0.502158</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077296 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077296 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c2_right_31"><static>true</static>
+      <pose>8.127585 -0.306434 0.002000 0.000000 0.000000 0.502158</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077296 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077296 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="s3_road"><static>true</static>
+      <pose>9.000000 0.000000 0.001000 0.000000 0.000000 0.000000</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>2.000000 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>2.000000 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="s3_left"><static>true</static>
+      <pose>9.000000 0.330000 0.002000 0.000000 0.000000 0.000000</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>2.000000 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>2.000000 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="s3_right"><static>true</static>
+      <pose>9.000000 -0.330000 0.002000 0.000000 0.000000 0.000000</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>2.000000 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>2.000000 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_road_0"><static>true</static>
+      <pose>10.031250 0.017174 0.001000 0.000000 0.000000 0.502158</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077296 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077296 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_left_0"><static>true</static>
+      <pose>9.872415 0.306434 0.002000 0.000000 0.000000 0.502158</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077296 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077296 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_right_0"><static>true</static>
+      <pose>10.190085 -0.272086 0.002000 0.000000 0.000000 0.502158</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077296 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077296 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_road_1"><static>true</static>
+      <pose>10.093750 0.051356 0.001000 0.000000 0.000000 0.498086</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077138 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077138 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_left_1"><static>true</static>
+      <pose>9.936094 0.341260 0.002000 0.000000 0.000000 0.498086</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077138 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077138 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_right_1"><static>true</static>
+      <pose>10.251406 -0.238549 0.002000 0.000000 0.000000 0.498086</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077138 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077138 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_road_2"><static>true</static>
+      <pose>10.156250 0.085043 0.001000 0.000000 0.000000 0.489927</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076826 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076826 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_left_2"><static>true</static>
+      <pose>10.000965 0.376224 0.002000 0.000000 0.000000 0.489927</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076826 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076826 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_right_2"><static>true</static>
+      <pose>10.311535 -0.206138 0.002000 0.000000 0.000000 0.489927</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076826 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076826 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_road_3"><static>true</static>
+      <pose>10.218750 0.117911 0.001000 0.000000 0.000000 0.477654</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076371 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076371 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_left_3"><static>true</static>
+      <pose>10.067050 0.410976 0.002000 0.000000 0.000000 0.477654</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076371 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076371 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_right_3"><static>true</static>
+      <pose>10.370450 -0.175154 0.002000 0.000000 0.000000 0.477654</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076371 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076371 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_road_4"><static>true</static>
+      <pose>10.281250 0.149644 0.001000 0.000000 0.000000 0.461234</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075788 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075788 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_left_4"><static>true</static>
+      <pose>10.134382 0.445161 0.002000 0.000000 0.000000 0.461234</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075788 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075788 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_right_4"><static>true</static>
+      <pose>10.428118 -0.145872 0.002000 0.000000 0.000000 0.461234</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075788 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075788 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_road_5"><static>true</static>
+      <pose>10.343750 0.179936 0.001000 0.000000 0.000000 0.440632</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075095 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075095 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_left_5"><static>true</static>
+      <pose>10.203001 0.478415 0.002000 0.000000 0.000000 0.440632</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075095 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075095 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_right_5"><static>true</static>
+      <pose>10.484499 -0.118543 0.002000 0.000000 0.000000 0.440632</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075095 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075095 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_road_6"><static>true</static>
+      <pose>10.406250 0.208495 0.001000 0.000000 0.000000 0.415829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.074318 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.074318 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_left_6"><static>true</static>
+      <pose>10.272947 0.510373 0.002000 0.000000 0.000000 0.415829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.074318 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.074318 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_right_6"><static>true</static>
+      <pose>10.539553 -0.093383 0.002000 0.000000 0.000000 0.415829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.074318 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.074318 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_road_7"><static>true</static>
+      <pose>10.468750 0.235046 0.001000 0.000000 0.000000 0.386829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.073483 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.073483 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_left_7"><static>true</static>
+      <pose>10.344256 0.540662 0.002000 0.000000 0.000000 0.386829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.073483 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.073483 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_right_7"><static>true</static>
+      <pose>10.593244 -0.070571 0.002000 0.000000 0.000000 0.386829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.073483 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.073483 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_road_8"><static>true</static>
+      <pose>10.531250 0.259333 0.001000 0.000000 0.000000 0.353679</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.072621 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.072621 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_left_8"><static>true</static>
+      <pose>10.416954 0.568908 0.002000 0.000000 0.000000 0.353679</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.072621 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.072621 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_right_8"><static>true</static>
+      <pose>10.645546 -0.050242 0.002000 0.000000 0.000000 0.353679</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.072621 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.072621 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_road_9"><static>true</static>
+      <pose>10.593750 0.281123 0.001000 0.000000 0.000000 0.316489</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.071764 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.071764 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_left_9"><static>true</static>
+      <pose>10.491043 0.594733 0.002000 0.000000 0.000000 0.316489</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.071764 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.071764 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_right_9"><static>true</static>
+      <pose>10.696457 -0.032488 0.002000 0.000000 0.000000 0.316489</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.071764 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.071764 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_road_10"><static>true</static>
+      <pose>10.656250 0.300205 0.001000 0.000000 0.000000 0.275453</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070947 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070947 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_left_10"><static>true</static>
+      <pose>10.566496 0.617765 0.002000 0.000000 0.000000 0.275453</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070947 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070947 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_right_10"><static>true</static>
+      <pose>10.746004 -0.017355 0.002000 0.000000 0.000000 0.275453</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070947 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070947 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_road_11"><static>true</static>
+      <pose>10.718750 0.316396 0.001000 0.000000 0.000000 0.230866</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070202 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070202 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_left_11"><static>true</static>
+      <pose>10.643239 0.637641 0.002000 0.000000 0.000000 0.230866</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070202 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070202 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_right_11"><static>true</static>
+      <pose>10.794261 -0.004848 0.002000 0.000000 0.000000 0.230866</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070202 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070202 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_road_12"><static>true</static>
+      <pose>10.781250 0.329540 0.001000 0.000000 0.000000 0.183137</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069562 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069562 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_left_12"><static>true</static>
+      <pose>10.721152 0.654022 0.002000 0.000000 0.000000 0.183137</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069562 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069562 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_right_12"><static>true</static>
+      <pose>10.841348 0.005059 0.002000 0.000000 0.000000 0.183137</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069562 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069562 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_road_13"><static>true</static>
+      <pose>10.843750 0.339511 0.001000 0.000000 0.000000 0.132797</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069055 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069055 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_left_13"><static>true</static>
+      <pose>10.800056 0.666605 0.002000 0.000000 0.000000 0.132797</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069055 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069055 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_right_13"><static>true</static>
+      <pose>10.887444 0.012416 0.002000 0.000000 0.000000 0.132797</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069055 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069055 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_road_14"><static>true</static>
+      <pose>10.906250 0.346212 0.001000 0.000000 0.000000 0.080494</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068703 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068703 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_left_14"><static>true</static>
+      <pose>10.879716 0.675143 0.002000 0.000000 0.000000 0.080494</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068703 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068703 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_right_14"><static>true</static>
+      <pose>10.932784 0.017280 0.002000 0.000000 0.000000 0.080494</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068703 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068703 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_road_15"><static>true</static>
+      <pose>10.968750 0.349578 0.001000 0.000000 0.000000 0.026969</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068523 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068523 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_left_15"><static>true</static>
+      <pose>10.959851 0.679458 0.002000 0.000000 0.000000 0.026969</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068523 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068523 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_right_15"><static>true</static>
+      <pose>10.977649 0.019698 0.002000 0.000000 0.000000 0.026969</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068523 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068523 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_road_16"><static>true</static>
+      <pose>11.031250 0.349578 0.001000 0.000000 0.000000 -0.026969</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068523 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068523 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_left_16"><static>true</static>
+      <pose>11.040149 0.679458 0.002000 0.000000 0.000000 -0.026969</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068523 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068523 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_right_16"><static>true</static>
+      <pose>11.022351 0.019698 0.002000 0.000000 0.000000 -0.026969</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068523 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068523 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_road_17"><static>true</static>
+      <pose>11.093750 0.346212 0.001000 0.000000 0.000000 -0.080494</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068703 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068703 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_left_17"><static>true</static>
+      <pose>11.120284 0.675143 0.002000 0.000000 0.000000 -0.080494</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068703 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068703 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_right_17"><static>true</static>
+      <pose>11.067216 0.017280 0.002000 0.000000 0.000000 -0.080494</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.068703 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.068703 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_road_18"><static>true</static>
+      <pose>11.156250 0.339511 0.001000 0.000000 0.000000 -0.132797</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069055 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069055 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_left_18"><static>true</static>
+      <pose>11.199944 0.666605 0.002000 0.000000 0.000000 -0.132797</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069055 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069055 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_right_18"><static>true</static>
+      <pose>11.112556 0.012416 0.002000 0.000000 0.000000 -0.132797</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069055 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069055 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_road_19"><static>true</static>
+      <pose>11.218750 0.329540 0.001000 0.000000 0.000000 -0.183137</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069562 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069562 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_left_19"><static>true</static>
+      <pose>11.278848 0.654022 0.002000 0.000000 0.000000 -0.183137</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069562 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069562 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_right_19"><static>true</static>
+      <pose>11.158652 0.005059 0.002000 0.000000 0.000000 -0.183137</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.069562 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.069562 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_road_20"><static>true</static>
+      <pose>11.281250 0.316396 0.001000 0.000000 0.000000 -0.230866</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070202 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070202 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_left_20"><static>true</static>
+      <pose>11.356761 0.637641 0.002000 0.000000 0.000000 -0.230866</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070202 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070202 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_right_20"><static>true</static>
+      <pose>11.205739 -0.004848 0.002000 0.000000 0.000000 -0.230866</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070202 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070202 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_road_21"><static>true</static>
+      <pose>11.343750 0.300205 0.001000 0.000000 0.000000 -0.275453</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070947 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070947 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_left_21"><static>true</static>
+      <pose>11.433504 0.617765 0.002000 0.000000 0.000000 -0.275453</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070947 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070947 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_right_21"><static>true</static>
+      <pose>11.253996 -0.017355 0.002000 0.000000 0.000000 -0.275453</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.070947 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.070947 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_road_22"><static>true</static>
+      <pose>11.406250 0.281123 0.001000 0.000000 0.000000 -0.316489</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.071764 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.071764 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_left_22"><static>true</static>
+      <pose>11.508957 0.594733 0.002000 0.000000 0.000000 -0.316489</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.071764 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.071764 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_right_22"><static>true</static>
+      <pose>11.303543 -0.032488 0.002000 0.000000 0.000000 -0.316489</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.071764 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.071764 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_road_23"><static>true</static>
+      <pose>11.468750 0.259333 0.001000 0.000000 0.000000 -0.353679</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.072621 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.072621 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_left_23"><static>true</static>
+      <pose>11.583046 0.568908 0.002000 0.000000 0.000000 -0.353679</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.072621 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.072621 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_right_23"><static>true</static>
+      <pose>11.354454 -0.050242 0.002000 0.000000 0.000000 -0.353679</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.072621 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.072621 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_road_24"><static>true</static>
+      <pose>11.531250 0.235046 0.001000 0.000000 0.000000 -0.386829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.073483 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.073483 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_left_24"><static>true</static>
+      <pose>11.655744 0.540662 0.002000 0.000000 0.000000 -0.386829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.073483 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.073483 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_right_24"><static>true</static>
+      <pose>11.406756 -0.070571 0.002000 0.000000 0.000000 -0.386829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.073483 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.073483 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_road_25"><static>true</static>
+      <pose>11.593750 0.208495 0.001000 0.000000 0.000000 -0.415829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.074318 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.074318 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_left_25"><static>true</static>
+      <pose>11.727053 0.510373 0.002000 0.000000 0.000000 -0.415829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.074318 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.074318 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_right_25"><static>true</static>
+      <pose>11.460447 -0.093383 0.002000 0.000000 0.000000 -0.415829</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.074318 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.074318 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_road_26"><static>true</static>
+      <pose>11.656250 0.179936 0.001000 0.000000 0.000000 -0.440632</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075095 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075095 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_left_26"><static>true</static>
+      <pose>11.796999 0.478415 0.002000 0.000000 0.000000 -0.440632</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075095 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075095 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_right_26"><static>true</static>
+      <pose>11.515501 -0.118543 0.002000 0.000000 0.000000 -0.440632</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075095 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075095 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_road_27"><static>true</static>
+      <pose>11.718750 0.149644 0.001000 0.000000 0.000000 -0.461234</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075788 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075788 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_left_27"><static>true</static>
+      <pose>11.865618 0.445161 0.002000 0.000000 0.000000 -0.461234</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075788 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075788 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_right_27"><static>true</static>
+      <pose>11.571882 -0.145872 0.002000 0.000000 0.000000 -0.461234</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.075788 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.075788 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_road_28"><static>true</static>
+      <pose>11.781250 0.117911 0.001000 0.000000 0.000000 -0.477654</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076371 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076371 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_left_28"><static>true</static>
+      <pose>11.932950 0.410976 0.002000 0.000000 0.000000 -0.477654</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076371 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076371 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_right_28"><static>true</static>
+      <pose>11.629550 -0.175154 0.002000 0.000000 0.000000 -0.477654</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076371 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076371 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_road_29"><static>true</static>
+      <pose>11.843750 0.085043 0.001000 0.000000 0.000000 -0.489927</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076826 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076826 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_left_29"><static>true</static>
+      <pose>11.999035 0.376224 0.002000 0.000000 0.000000 -0.489927</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076826 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076826 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_right_29"><static>true</static>
+      <pose>11.688465 -0.206138 0.002000 0.000000 0.000000 -0.489927</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.076826 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.076826 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_road_30"><static>true</static>
+      <pose>11.906250 0.051356 0.001000 0.000000 0.000000 -0.498086</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077138 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077138 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_left_30"><static>true</static>
+      <pose>12.063906 0.341260 0.002000 0.000000 0.000000 -0.498086</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077138 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077138 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_right_30"><static>true</static>
+      <pose>11.748594 -0.238549 0.002000 0.000000 0.000000 -0.498086</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077138 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077138 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_road_31"><static>true</static>
+      <pose>11.968750 0.017174 0.001000 0.000000 0.000000 -0.502158</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077296 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077296 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_left_31"><static>true</static>
+      <pose>12.127585 0.306434 0.002000 0.000000 0.000000 -0.502158</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077296 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077296 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="c3_right_31"><static>true</static>
+      <pose>11.809915 -0.272086 0.002000 0.000000 0.000000 -0.502158</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.077296 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>0.077296 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="s4_road"><static>true</static>
+      <pose>13.000000 0.000000 0.001000 0.000000 0.000000 0.000000</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>2.000000 0.700000 0.002000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>2.000000 0.700000 0.002000</size></box></geometry>
+          <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.09 0.09 0.09 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="s4_left"><static>true</static>
+      <pose>13.000000 0.330000 0.002000 0.000000 0.000000 0.000000</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>2.000000 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>2.000000 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="s4_right"><static>true</static>
+      <pose>13.000000 -0.330000 0.002000 0.000000 0.000000 0.000000</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>2.000000 0.040000 0.003000</size></box></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <visual name="vis"><geometry><box><size>2.000000 0.040000 0.003000</size></box></geometry>
+          <material><ambient>1.0 1.0 1.0 1</ambient><diffuse>1.0 1.0 1.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="start_marker"><static>true</static>
+      <pose>0.05 0.0 0.05 0 0 0</pose><link name="link">
+        <visual name="vis"><geometry><box><size>0.05 0.70 0.08</size></box></geometry>
+          <material><ambient>0.9 0.0 0.0 1</ambient><diffuse>1.0 0.0 0.0 1</diffuse></material></visual>
+      </link></model>
+
+    <model name="end_marker"><static>true</static>
+      <pose>13.95 0.0 0.05 0 0 0</pose><link name="link">
+        <visual name="vis"><geometry><box><size>0.05 0.70 0.08</size></box></geometry>
+          <material><ambient>0.0 0.8 0.0 1</ambient><diffuse>0.0 1.0 0.0 1</diffuse></material></visual>
+      </link></model>
+  </world>
+</sdf>

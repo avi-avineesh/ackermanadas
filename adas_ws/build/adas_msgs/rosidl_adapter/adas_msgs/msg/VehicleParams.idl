@@ -1,0 +1,14 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from adas_msgs/msg/VehicleParams.msg
+// generated code does not contain a copyright notice
+
+
+module adas_msgs {
+  module msg {
+    struct VehicleParams {
+      float max_speed;
+
+      float max_steer;
+    };
+  };
+};

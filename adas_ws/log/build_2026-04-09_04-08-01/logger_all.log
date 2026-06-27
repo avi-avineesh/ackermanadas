@@ -1,0 +1,384 @@
+[0.064s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[0.064s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=20, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x736c7b357ad0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x736c7b357800>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x736c7b357800>>)
+[0.085s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.085s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.085s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.085s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.085s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.085s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.085s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/khatvangi/adas_ws'
+[0.085s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.085s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.085s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.085s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.085s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.085s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.085s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.085s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.085s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src/adas_core) by extensions ['ignore', 'ignore_ament_install']
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src/adas_core) by extension 'ignore'
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src/adas_core) by extension 'ignore_ament_install'
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src/adas_core) by extensions ['colcon_pkg']
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src/adas_core) by extension 'colcon_pkg'
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src/adas_core) by extensions ['colcon_meta']
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src/adas_core) by extension 'colcon_meta'
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src/adas_core) by extensions ['ros']
+[0.102s] Level 1:colcon.colcon_core.package_identification:_identify(src/adas_core) by extension 'ros'
+[0.103s] DEBUG:colcon.colcon_core.package_identification:Package 'src/adas_core' with type 'ros.ament_python' and name 'adas_core'
+[0.103s] Level 1:colcon.colcon_core.package_identification:_identify(src/adas_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(src/adas_msgs) by extension 'ignore'
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(src/adas_msgs) by extension 'ignore_ament_install'
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(src/adas_msgs) by extensions ['colcon_pkg']
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(src/adas_msgs) by extension 'colcon_pkg'
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(src/adas_msgs) by extensions ['colcon_meta']
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(src/adas_msgs) by extension 'colcon_meta'
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(src/adas_msgs) by extensions ['ros']
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(src/adas_msgs) by extension 'ros'
+[0.104s] DEBUG:colcon.colcon_core.package_identification:Package 'src/adas_msgs' with type 'ros.ament_cmake' and name 'adas_msgs'
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(src/dashboard) by extensions ['ignore', 'ignore_ament_install']
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(src/dashboard) by extension 'ignore'
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(src/dashboard) by extension 'ignore_ament_install'
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(src/dashboard) by extensions ['colcon_pkg']
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(src/dashboard) by extension 'colcon_pkg'
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(src/dashboard) by extensions ['colcon_meta']
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(src/dashboard) by extension 'colcon_meta'
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(src/dashboard) by extensions ['ros']
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(src/dashboard) by extension 'ros'
+[0.105s] DEBUG:colcon.colcon_core.package_identification:Package 'src/dashboard' with type 'ros.ament_python' and name 'dashboard'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception) by extensions ['ignore', 'ignore_ament_install']
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception) by extension 'ignore'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception) by extension 'ignore_ament_install'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception) by extensions ['colcon_pkg']
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception) by extension 'colcon_pkg'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception) by extensions ['colcon_meta']
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception) by extension 'colcon_meta'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception) by extensions ['ros']
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception) by extension 'ros'
+[0.105s] DEBUG:colcon.colcon_core.package_identification:Package 'src/perception' with type 'ros.ament_python' and name 'perception'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_bringup) by extension 'ignore'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_bringup) by extension 'ignore_ament_install'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_bringup) by extensions ['colcon_pkg']
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_bringup) by extension 'colcon_pkg'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_bringup) by extensions ['colcon_meta']
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_bringup) by extension 'colcon_meta'
+[0.106s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_bringup) by extensions ['ros']
+[0.106s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_bringup) by extension 'ros'
+[0.106s] DEBUG:colcon.colcon_core.package_identification:Package 'src/robot_bringup' with type 'ros.ament_cmake' and name 'robot_bringup'
+[0.106s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.106s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.106s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.106s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.106s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.118s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.118s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.119s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 5 installed packages in /home/khatvangi/adas_ws/install
+[0.119s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 2 installed packages in /home/khatvangi/project_ws_v2/install
+[0.120s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 416 installed packages in /opt/ros/jazzy
+[0.122s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.149s] Level 5:colcon.colcon_core.verb:set package 'adas_msgs' build argument 'cmake_args' from command line to 'None'
+[0.149s] Level 5:colcon.colcon_core.verb:set package 'adas_msgs' build argument 'cmake_target' from command line to 'None'
+[0.149s] Level 5:colcon.colcon_core.verb:set package 'adas_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.149s] Level 5:colcon.colcon_core.verb:set package 'adas_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.149s] Level 5:colcon.colcon_core.verb:set package 'adas_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.149s] Level 5:colcon.colcon_core.verb:set package 'adas_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.149s] Level 5:colcon.colcon_core.verb:set package 'adas_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.149s] Level 5:colcon.colcon_core.verb:set package 'adas_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.149s] Level 5:colcon.colcon_core.verb:set package 'adas_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.149s] DEBUG:colcon.colcon_core.verb:Building package 'adas_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/khatvangi/adas_ws/build/adas_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/khatvangi/adas_ws/install/adas_msgs', 'merge_install': False, 'path': '/home/khatvangi/adas_ws/src/adas_msgs', 'symlink_install': True, 'test_result_base': None}
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'dashboard' build argument 'cmake_args' from command line to 'None'
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'dashboard' build argument 'cmake_target' from command line to 'None'
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'dashboard' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'dashboard' build argument 'cmake_clean_cache' from command line to 'False'
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'dashboard' build argument 'cmake_clean_first' from command line to 'False'
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'dashboard' build argument 'cmake_force_configure' from command line to 'False'
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'dashboard' build argument 'ament_cmake_args' from command line to 'None'
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'dashboard' build argument 'catkin_cmake_args' from command line to 'None'
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'dashboard' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.150s] DEBUG:colcon.colcon_core.verb:Building package 'dashboard' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/khatvangi/adas_ws/build/dashboard', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/khatvangi/adas_ws/install/dashboard', 'merge_install': False, 'path': '/home/khatvangi/adas_ws/src/dashboard', 'symlink_install': True, 'test_result_base': None}
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'perception' build argument 'cmake_args' from command line to 'None'
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'perception' build argument 'cmake_target' from command line to 'None'
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'perception' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'perception' build argument 'cmake_clean_cache' from command line to 'False'
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'perception' build argument 'cmake_clean_first' from command line to 'False'
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'perception' build argument 'cmake_force_configure' from command line to 'False'
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'perception' build argument 'ament_cmake_args' from command line to 'None'
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'perception' build argument 'catkin_cmake_args' from command line to 'None'
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'perception' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.150s] DEBUG:colcon.colcon_core.verb:Building package 'perception' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/khatvangi/adas_ws/build/perception', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/khatvangi/adas_ws/install/perception', 'merge_install': False, 'path': '/home/khatvangi/adas_ws/src/perception', 'symlink_install': True, 'test_result_base': None}
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'robot_bringup' build argument 'cmake_args' from command line to 'None'
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'robot_bringup' build argument 'cmake_target' from command line to 'None'
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'robot_bringup' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'robot_bringup' build argument 'cmake_clean_cache' from command line to 'False'
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'robot_bringup' build argument 'cmake_clean_first' from command line to 'False'
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'robot_bringup' build argument 'cmake_force_configure' from command line to 'False'
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'robot_bringup' build argument 'ament_cmake_args' from command line to 'None'
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'robot_bringup' build argument 'catkin_cmake_args' from command line to 'None'
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'robot_bringup' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.150s] DEBUG:colcon.colcon_core.verb:Building package 'robot_bringup' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/khatvangi/adas_ws/build/robot_bringup', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/khatvangi/adas_ws/install/robot_bringup', 'merge_install': False, 'path': '/home/khatvangi/adas_ws/src/robot_bringup', 'symlink_install': True, 'test_result_base': None}
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'adas_core' build argument 'cmake_args' from command line to 'None'
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'adas_core' build argument 'cmake_target' from command line to 'None'
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'adas_core' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'adas_core' build argument 'cmake_clean_cache' from command line to 'False'
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'adas_core' build argument 'cmake_clean_first' from command line to 'False'
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'adas_core' build argument 'cmake_force_configure' from command line to 'False'
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'adas_core' build argument 'ament_cmake_args' from command line to 'None'
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'adas_core' build argument 'catkin_cmake_args' from command line to 'None'
+[0.150s] Level 5:colcon.colcon_core.verb:set package 'adas_core' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.150s] DEBUG:colcon.colcon_core.verb:Building package 'adas_core' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/khatvangi/adas_ws/build/adas_core', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/khatvangi/adas_ws/install/adas_core', 'merge_install': False, 'path': '/home/khatvangi/adas_ws/src/adas_core', 'symlink_install': True, 'test_result_base': None}
+[0.150s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.151s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.151s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/khatvangi/adas_ws/src/adas_msgs' with build type 'ament_cmake'
+[0.151s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/khatvangi/adas_ws/src/adas_msgs'
+[0.152s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.152s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.152s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.155s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/khatvangi/adas_ws/src/dashboard' with build type 'ament_python'
+[0.155s] Level 1:colcon.colcon_core.shell:create_environment_hook('dashboard', 'ament_prefix_path')
+[0.155s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/install/dashboard/share/dashboard/hook/ament_prefix_path.ps1'
+[0.155s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/khatvangi/adas_ws/install/dashboard/share/dashboard/hook/ament_prefix_path.dsv'
+[0.156s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/install/dashboard/share/dashboard/hook/ament_prefix_path.sh'
+[0.156s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.156s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.158s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/khatvangi/adas_ws/src/perception' with build type 'ament_python'
+[0.158s] Level 1:colcon.colcon_core.shell:create_environment_hook('perception', 'ament_prefix_path')
+[0.158s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/install/perception/share/perception/hook/ament_prefix_path.ps1'
+[0.158s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/khatvangi/adas_ws/install/perception/share/perception/hook/ament_prefix_path.dsv'
+[0.158s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/install/perception/share/perception/hook/ament_prefix_path.sh'
+[0.159s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.159s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.182s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/khatvangi/adas_ws/src/robot_bringup' with build type 'ament_cmake'
+[0.182s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/khatvangi/adas_ws/src/robot_bringup'
+[0.183s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.183s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.187s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/khatvangi/adas_ws/build/adas_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/khatvangi/adas_ws/install/perception:/home/khatvangi/adas_ws/install/dashboard:/home/khatvangi/adas_ws/install/adas_core:/home/khatvangi/project_ws_v2/install/adas_core:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/khatvangi/adas_ws/build/adas_msgs -- -j20 -l20
+[0.345s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/khatvangi/adas_ws/src/dashboard'
+[0.345s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.345s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.495s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/khatvangi/adas_ws/src/perception'
+[0.495s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.495s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.500s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/khatvangi/adas_ws/build/robot_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/khatvangi/adas_ws/install/perception:/home/khatvangi/adas_ws/install/dashboard:/home/khatvangi/adas_ws/install/adas_core:/home/khatvangi/project_ws_v2/install/adas_core:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/khatvangi/adas_ws/build/robot_bringup -- -j20 -l20
+[0.500s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/khatvangi/adas_ws/build/adas_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/khatvangi/adas_ws/install/perception:/home/khatvangi/adas_ws/install/dashboard:/home/khatvangi/adas_ws/install/adas_core:/home/khatvangi/project_ws_v2/install/adas_core:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/khatvangi/adas_ws/build/adas_msgs -- -j20 -l20
+[0.507s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/khatvangi/adas_ws/build/adas_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/khatvangi/adas_ws/install/perception:/home/khatvangi/adas_ws/install/dashboard:/home/khatvangi/adas_ws/install/adas_core:/home/khatvangi/project_ws_v2/install/adas_core:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/khatvangi/adas_ws/build/adas_msgs
+[0.531s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/khatvangi/adas_ws/build/robot_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/khatvangi/adas_ws/install/perception:/home/khatvangi/adas_ws/install/dashboard:/home/khatvangi/adas_ws/install/adas_core:/home/khatvangi/project_ws_v2/install/adas_core:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/khatvangi/adas_ws/build/robot_bringup -- -j20 -l20
+[0.532s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/khatvangi/adas_ws/build/robot_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/khatvangi/adas_ws/install/perception:/home/khatvangi/adas_ws/install/dashboard:/home/khatvangi/adas_ws/install/adas_core:/home/khatvangi/project_ws_v2/install/adas_core:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/khatvangi/adas_ws/build/robot_bringup
+[0.548s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_bringup)
+[0.548s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/khatvangi/adas_ws/build/robot_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/khatvangi/adas_ws/install/perception:/home/khatvangi/adas_ws/install/dashboard:/home/khatvangi/adas_ws/install/adas_core:/home/khatvangi/project_ws_v2/install/adas_core:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/khatvangi/adas_ws/build/robot_bringup
+[0.550s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/robot_bringup' for CMake module files
+[0.550s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/robot_bringup' for CMake config files
+[0.550s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_bringup', 'cmake_prefix_path')
+[0.550s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/install/robot_bringup/share/robot_bringup/hook/cmake_prefix_path.ps1'
+[0.551s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/khatvangi/adas_ws/install/robot_bringup/share/robot_bringup/hook/cmake_prefix_path.dsv'
+[0.551s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/install/robot_bringup/share/robot_bringup/hook/cmake_prefix_path.sh'
+[0.551s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/robot_bringup/lib'
+[0.551s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/robot_bringup/bin'
+[0.551s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/robot_bringup/lib/pkgconfig/robot_bringup.pc'
+[0.551s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/robot_bringup/lib/python3.12/site-packages'
+[0.552s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/robot_bringup/bin'
+[0.552s] INFO:colcon.colcon_core.shell:Creating package script '/home/khatvangi/adas_ws/install/robot_bringup/share/robot_bringup/package.ps1'
+[0.552s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/khatvangi/adas_ws/install/robot_bringup/share/robot_bringup/package.dsv'
+[0.553s] INFO:colcon.colcon_core.shell:Creating package script '/home/khatvangi/adas_ws/install/robot_bringup/share/robot_bringup/package.sh'
+[0.553s] INFO:colcon.colcon_core.shell:Creating package script '/home/khatvangi/adas_ws/install/robot_bringup/share/robot_bringup/package.bash'
+[0.553s] INFO:colcon.colcon_core.shell:Creating package script '/home/khatvangi/adas_ws/install/robot_bringup/share/robot_bringup/package.zsh'
+[0.553s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/khatvangi/adas_ws/install/robot_bringup/share/colcon-core/packages/robot_bringup)
+[0.554s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_bringup)
+[0.554s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/robot_bringup' for CMake module files
+[0.554s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/robot_bringup' for CMake config files
+[0.554s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_bringup', 'cmake_prefix_path')
+[0.554s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/install/robot_bringup/share/robot_bringup/hook/cmake_prefix_path.ps1'
+[0.555s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/khatvangi/adas_ws/install/robot_bringup/share/robot_bringup/hook/cmake_prefix_path.dsv'
+[0.555s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/install/robot_bringup/share/robot_bringup/hook/cmake_prefix_path.sh'
+[0.555s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/robot_bringup/lib'
+[0.555s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/robot_bringup/bin'
+[0.555s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/robot_bringup/lib/pkgconfig/robot_bringup.pc'
+[0.556s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/robot_bringup/lib/python3.12/site-packages'
+[0.556s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/robot_bringup/bin'
+[0.556s] INFO:colcon.colcon_core.shell:Creating package script '/home/khatvangi/adas_ws/install/robot_bringup/share/robot_bringup/package.ps1'
+[0.556s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/khatvangi/adas_ws/install/robot_bringup/share/robot_bringup/package.dsv'
+[0.556s] INFO:colcon.colcon_core.shell:Creating package script '/home/khatvangi/adas_ws/install/robot_bringup/share/robot_bringup/package.sh'
+[0.557s] INFO:colcon.colcon_core.shell:Creating package script '/home/khatvangi/adas_ws/install/robot_bringup/share/robot_bringup/package.bash'
+[0.557s] INFO:colcon.colcon_core.shell:Creating package script '/home/khatvangi/adas_ws/install/robot_bringup/share/robot_bringup/package.zsh'
+[0.557s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/khatvangi/adas_ws/install/robot_bringup/share/colcon-core/packages/robot_bringup)
+[0.564s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(adas_msgs)
+[0.564s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/khatvangi/adas_ws/build/adas_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/khatvangi/adas_ws/install/perception:/home/khatvangi/adas_ws/install/dashboard:/home/khatvangi/adas_ws/install/adas_core:/home/khatvangi/project_ws_v2/install/adas_core:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/khatvangi/adas_ws/build/adas_msgs
+[0.564s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/adas_msgs' for CMake module files
+[0.565s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/adas_msgs' for CMake config files
+[0.565s] Level 1:colcon.colcon_core.shell:create_environment_hook('adas_msgs', 'cmake_prefix_path')
+[0.565s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/install/adas_msgs/share/adas_msgs/hook/cmake_prefix_path.ps1'
+[0.565s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/khatvangi/adas_ws/install/adas_msgs/share/adas_msgs/hook/cmake_prefix_path.dsv'
+[0.566s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/install/adas_msgs/share/adas_msgs/hook/cmake_prefix_path.sh'
+[0.566s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/adas_msgs/lib'
+[0.566s] Level 1:colcon.colcon_core.shell:create_environment_hook('adas_msgs', 'ld_library_path_lib')
+[0.566s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/install/adas_msgs/share/adas_msgs/hook/ld_library_path_lib.ps1'
+[0.566s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/khatvangi/adas_ws/install/adas_msgs/share/adas_msgs/hook/ld_library_path_lib.dsv'
+[0.567s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/install/adas_msgs/share/adas_msgs/hook/ld_library_path_lib.sh'
+[0.567s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/adas_msgs/bin'
+[0.567s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/adas_msgs/lib/pkgconfig/adas_msgs.pc'
+[0.567s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/adas_msgs/lib/python3.12/site-packages'
+[0.567s] Level 1:colcon.colcon_core.shell:create_environment_hook('adas_msgs', 'pythonpath')
+[0.567s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/install/adas_msgs/share/adas_msgs/hook/pythonpath.ps1'
+[0.567s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/khatvangi/adas_ws/install/adas_msgs/share/adas_msgs/hook/pythonpath.dsv'
+[0.567s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/install/adas_msgs/share/adas_msgs/hook/pythonpath.sh'
+[0.568s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/adas_msgs/bin'
+[0.568s] INFO:colcon.colcon_core.shell:Creating package script '/home/khatvangi/adas_ws/install/adas_msgs/share/adas_msgs/package.ps1'
+[0.568s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/khatvangi/adas_ws/install/adas_msgs/share/adas_msgs/package.dsv'
+[0.568s] INFO:colcon.colcon_core.shell:Creating package script '/home/khatvangi/adas_ws/install/adas_msgs/share/adas_msgs/package.sh'
+[0.569s] INFO:colcon.colcon_core.shell:Creating package script '/home/khatvangi/adas_ws/install/adas_msgs/share/adas_msgs/package.bash'
+[0.569s] INFO:colcon.colcon_core.shell:Creating package script '/home/khatvangi/adas_ws/install/adas_msgs/share/adas_msgs/package.zsh'
+[0.569s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/khatvangi/adas_ws/install/adas_msgs/share/colcon-core/packages/adas_msgs)
+[0.569s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(adas_msgs)
+[0.569s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/adas_msgs' for CMake module files
+[0.570s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/adas_msgs' for CMake config files
+[0.570s] Level 1:colcon.colcon_core.shell:create_environment_hook('adas_msgs', 'cmake_prefix_path')
+[0.570s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/install/adas_msgs/share/adas_msgs/hook/cmake_prefix_path.ps1'
+[0.571s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/khatvangi/adas_ws/install/adas_msgs/share/adas_msgs/hook/cmake_prefix_path.dsv'
+[0.571s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/install/adas_msgs/share/adas_msgs/hook/cmake_prefix_path.sh'
+[0.571s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/adas_msgs/lib'
+[0.571s] Level 1:colcon.colcon_core.shell:create_environment_hook('adas_msgs', 'ld_library_path_lib')
+[0.571s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/install/adas_msgs/share/adas_msgs/hook/ld_library_path_lib.ps1'
+[0.571s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/khatvangi/adas_ws/install/adas_msgs/share/adas_msgs/hook/ld_library_path_lib.dsv'
+[0.572s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/install/adas_msgs/share/adas_msgs/hook/ld_library_path_lib.sh'
+[0.572s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/adas_msgs/bin'
+[0.572s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/adas_msgs/lib/pkgconfig/adas_msgs.pc'
+[0.572s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/adas_msgs/lib/python3.12/site-packages'
+[0.572s] Level 1:colcon.colcon_core.shell:create_environment_hook('adas_msgs', 'pythonpath')
+[0.572s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/install/adas_msgs/share/adas_msgs/hook/pythonpath.ps1'
+[0.572s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/khatvangi/adas_ws/install/adas_msgs/share/adas_msgs/hook/pythonpath.dsv'
+[0.572s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/install/adas_msgs/share/adas_msgs/hook/pythonpath.sh'
+[0.573s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/adas_msgs/bin'
+[0.573s] INFO:colcon.colcon_core.shell:Creating package script '/home/khatvangi/adas_ws/install/adas_msgs/share/adas_msgs/package.ps1'
+[0.573s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/khatvangi/adas_ws/install/adas_msgs/share/adas_msgs/package.dsv'
+[0.573s] INFO:colcon.colcon_core.shell:Creating package script '/home/khatvangi/adas_ws/install/adas_msgs/share/adas_msgs/package.sh'
+[0.574s] INFO:colcon.colcon_core.shell:Creating package script '/home/khatvangi/adas_ws/install/adas_msgs/share/adas_msgs/package.bash'
+[0.574s] INFO:colcon.colcon_core.shell:Creating package script '/home/khatvangi/adas_ws/install/adas_msgs/share/adas_msgs/package.zsh'
+[0.574s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/khatvangi/adas_ws/install/adas_msgs/share/colcon-core/packages/adas_msgs)
+[0.574s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/khatvangi/adas_ws/src/adas_core' with build type 'ament_python'
+[0.574s] Level 1:colcon.colcon_core.shell:create_environment_hook('adas_core', 'ament_prefix_path')
+[0.574s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/install/adas_core/share/adas_core/hook/ament_prefix_path.ps1'
+[0.575s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/khatvangi/adas_ws/install/adas_core/share/adas_core/hook/ament_prefix_path.dsv'
+[0.575s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/install/adas_core/share/adas_core/hook/ament_prefix_path.sh'
+[0.575s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.575s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.737s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/khatvangi/adas_ws/src/adas_core'
+[0.737s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.737s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.894s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/khatvangi/adas_ws/build/perception': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/khatvangi/adas_ws/build/perception/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/khatvangi/adas_ws/install/perception/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/khatvangi/adas_ws/build/perception/build --no-deps symlink_data
+[0.895s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/khatvangi/adas_ws/build/dashboard': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/khatvangi/adas_ws/build/dashboard/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/khatvangi/adas_ws/install/dashboard/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/khatvangi/adas_ws/build/dashboard/build --no-deps symlink_data
+[1.128s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/khatvangi/adas_ws/build/adas_core': AMENT_PREFIX_PATH=/home/khatvangi/adas_ws/install/adas_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/khatvangi/adas_ws/install/adas_msgs:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/khatvangi/adas_ws/install/adas_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/khatvangi/adas_ws/build/adas_core/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/khatvangi/adas_ws/install/adas_core/lib/python3.12/site-packages:/home/khatvangi/adas_ws/install/adas_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/khatvangi/adas_ws/build/adas_core/build --no-deps symlink_data
+[1.344s] Level 1:colcon.colcon_core.shell:create_environment_hook('dashboard', 'pythonpath_develop')
+[1.344s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/build/dashboard/share/dashboard/hook/pythonpath_develop.ps1'
+[1.345s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/khatvangi/adas_ws/build/dashboard' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/khatvangi/adas_ws/build/dashboard/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/khatvangi/adas_ws/install/dashboard/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/khatvangi/adas_ws/build/dashboard/build --no-deps symlink_data
+[1.345s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/khatvangi/adas_ws/build/dashboard/share/dashboard/hook/pythonpath_develop.dsv'
+[1.345s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/build/dashboard/share/dashboard/hook/pythonpath_develop.sh'
+[1.345s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/dashboard' for CMake module files
+[1.346s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/dashboard' for CMake config files
+[1.346s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/dashboard/lib'
+[1.346s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/dashboard/bin'
+[1.346s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/dashboard/lib/pkgconfig/dashboard.pc'
+[1.346s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/dashboard/lib/python3.12/site-packages'
+[1.346s] Level 1:colcon.colcon_core.shell:create_environment_hook('dashboard', 'pythonpath')
+[1.346s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/install/dashboard/share/dashboard/hook/pythonpath.ps1'
+[1.346s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/khatvangi/adas_ws/install/dashboard/share/dashboard/hook/pythonpath.dsv'
+[1.347s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/install/dashboard/share/dashboard/hook/pythonpath.sh'
+[1.347s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/dashboard/bin'
+[1.347s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(dashboard)
+[1.347s] INFO:colcon.colcon_core.shell:Creating package script '/home/khatvangi/adas_ws/install/dashboard/share/dashboard/package.ps1'
+[1.347s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/khatvangi/adas_ws/install/dashboard/share/dashboard/package.dsv'
+[1.348s] INFO:colcon.colcon_core.shell:Creating package script '/home/khatvangi/adas_ws/install/dashboard/share/dashboard/package.sh'
+[1.348s] INFO:colcon.colcon_core.shell:Creating package script '/home/khatvangi/adas_ws/install/dashboard/share/dashboard/package.bash'
+[1.348s] INFO:colcon.colcon_core.shell:Creating package script '/home/khatvangi/adas_ws/install/dashboard/share/dashboard/package.zsh'
+[1.348s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/khatvangi/adas_ws/install/dashboard/share/colcon-core/packages/dashboard)
+[1.348s] Level 1:colcon.colcon_core.shell:create_environment_hook('perception', 'pythonpath_develop')
+[1.348s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/build/perception/share/perception/hook/pythonpath_develop.ps1'
+[1.349s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/khatvangi/adas_ws/build/perception/share/perception/hook/pythonpath_develop.dsv'
+[1.349s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/build/perception/share/perception/hook/pythonpath_develop.sh'
+[1.349s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/khatvangi/adas_ws/build/perception' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/khatvangi/adas_ws/build/perception/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/khatvangi/adas_ws/install/perception/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/khatvangi/adas_ws/build/perception/build --no-deps symlink_data
+[1.349s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/perception' for CMake module files
+[1.350s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/perception' for CMake config files
+[1.350s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/perception/lib'
+[1.350s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/perception/bin'
+[1.350s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/perception/lib/pkgconfig/perception.pc'
+[1.350s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/perception/lib/python3.12/site-packages'
+[1.350s] Level 1:colcon.colcon_core.shell:create_environment_hook('perception', 'pythonpath')
+[1.350s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/install/perception/share/perception/hook/pythonpath.ps1'
+[1.350s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/khatvangi/adas_ws/install/perception/share/perception/hook/pythonpath.dsv'
+[1.351s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/install/perception/share/perception/hook/pythonpath.sh'
+[1.351s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/perception/bin'
+[1.351s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(perception)
+[1.351s] INFO:colcon.colcon_core.shell:Creating package script '/home/khatvangi/adas_ws/install/perception/share/perception/package.ps1'
+[1.351s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/khatvangi/adas_ws/install/perception/share/perception/package.dsv'
+[1.352s] INFO:colcon.colcon_core.shell:Creating package script '/home/khatvangi/adas_ws/install/perception/share/perception/package.sh'
+[1.352s] INFO:colcon.colcon_core.shell:Creating package script '/home/khatvangi/adas_ws/install/perception/share/perception/package.bash'
+[1.352s] INFO:colcon.colcon_core.shell:Creating package script '/home/khatvangi/adas_ws/install/perception/share/perception/package.zsh'
+[1.352s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/khatvangi/adas_ws/install/perception/share/colcon-core/packages/perception)
+[1.577s] Level 1:colcon.colcon_core.shell:create_environment_hook('adas_core', 'pythonpath_develop')
+[1.578s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/build/adas_core/share/adas_core/hook/pythonpath_develop.ps1'
+[1.578s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/khatvangi/adas_ws/build/adas_core' returned '0': AMENT_PREFIX_PATH=/home/khatvangi/adas_ws/install/adas_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/khatvangi/adas_ws/install/adas_msgs:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/khatvangi/adas_ws/install/adas_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/khatvangi/adas_ws/build/adas_core/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/khatvangi/adas_ws/install/adas_core/lib/python3.12/site-packages:/home/khatvangi/adas_ws/install/adas_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/khatvangi/adas_ws/build/adas_core/build --no-deps symlink_data
+[1.578s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/khatvangi/adas_ws/build/adas_core/share/adas_core/hook/pythonpath_develop.dsv'
+[1.578s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/build/adas_core/share/adas_core/hook/pythonpath_develop.sh'
+[1.579s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/adas_core' for CMake module files
+[1.579s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/adas_core' for CMake config files
+[1.579s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/adas_core/lib'
+[1.579s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/adas_core/bin'
+[1.579s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/adas_core/lib/pkgconfig/adas_core.pc'
+[1.579s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/adas_core/lib/python3.12/site-packages'
+[1.579s] Level 1:colcon.colcon_core.shell:create_environment_hook('adas_core', 'pythonpath')
+[1.580s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/install/adas_core/share/adas_core/hook/pythonpath.ps1'
+[1.580s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/khatvangi/adas_ws/install/adas_core/share/adas_core/hook/pythonpath.dsv'
+[1.580s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/khatvangi/adas_ws/install/adas_core/share/adas_core/hook/pythonpath.sh'
+[1.580s] Level 1:colcon.colcon_core.environment:checking '/home/khatvangi/adas_ws/install/adas_core/bin'
+[1.580s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(adas_core)
+[1.580s] INFO:colcon.colcon_core.shell:Creating package script '/home/khatvangi/adas_ws/install/adas_core/share/adas_core/package.ps1'
+[1.581s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/khatvangi/adas_ws/install/adas_core/share/adas_core/package.dsv'
+[1.581s] INFO:colcon.colcon_core.shell:Creating package script '/home/khatvangi/adas_ws/install/adas_core/share/adas_core/package.sh'
+[1.581s] INFO:colcon.colcon_core.shell:Creating package script '/home/khatvangi/adas_ws/install/adas_core/share/adas_core/package.bash'
+[1.581s] INFO:colcon.colcon_core.shell:Creating package script '/home/khatvangi/adas_ws/install/adas_core/share/adas_core/package.zsh'
+[1.582s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/khatvangi/adas_ws/install/adas_core/share/colcon-core/packages/adas_core)
+[1.582s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[1.582s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[1.582s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[1.582s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[1.585s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[1.585s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[1.585s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[1.594s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[1.595s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/khatvangi/adas_ws/install/local_setup.ps1'
+[1.595s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/khatvangi/adas_ws/install/_local_setup_util_ps1.py'
+[1.596s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/khatvangi/adas_ws/install/setup.ps1'
+[1.596s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/khatvangi/adas_ws/install/local_setup.sh'
+[1.597s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/khatvangi/adas_ws/install/_local_setup_util_sh.py'
+[1.597s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/khatvangi/adas_ws/install/setup.sh'
+[1.597s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/khatvangi/adas_ws/install/local_setup.bash'
+[1.598s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/khatvangi/adas_ws/install/setup.bash'
+[1.598s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/khatvangi/adas_ws/install/local_setup.zsh'
+[1.598s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/khatvangi/adas_ws/install/setup.zsh'

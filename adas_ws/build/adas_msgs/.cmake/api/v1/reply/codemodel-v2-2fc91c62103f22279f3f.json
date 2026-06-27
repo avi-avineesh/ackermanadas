@@ -1,0 +1,242 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-9ca3a6c4de81517a09ed.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				},
+				{
+					"build" : "adas_msgs__py",
+					"jsonFile" : "directory-adas_msgs__py-888b56bc3f7da3403043.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/khatvangi/adas_ws/build/adas_msgs/adas_msgs__py",
+					"targetIndexes" : 
+					[
+						2
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "adas_msgs",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "adas_msgs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-adas_msgs-2ee78921670ab2305b04.json",
+					"name" : "adas_msgs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "adas_msgs__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-adas_msgs__cpp-5e0640eecda392b9908d.json",
+					"name" : "adas_msgs__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "adas_msgs__py::@523f13aaee73dae2bc5e",
+					"jsonFile" : "target-adas_msgs__py-da344afa8b70f016260b.json",
+					"name" : "adas_msgs__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "adas_msgs__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-adas_msgs__rosidl_generator_c-779e9d6b2122ff89befb.json",
+					"name" : "adas_msgs__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "adas_msgs__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-adas_msgs__rosidl_generator_py-4481d733023e689dc53e.json",
+					"name" : "adas_msgs__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "adas_msgs__rosidl_generator_type_description::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-adas_msgs__rosidl_generator_type_description-ed4a0a91fc3aafc35d7e.json",
+					"name" : "adas_msgs__rosidl_generator_type_description",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "adas_msgs__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-adas_msgs__rosidl_typesupport_c-eeca12fbbb4bb3c5eff8.json",
+					"name" : "adas_msgs__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "adas_msgs__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-adas_msgs__rosidl_typesupport_cpp-af00a4dc8ba3b014334a.json",
+					"name" : "adas_msgs__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "adas_msgs__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-adas_msgs__rosidl_typesupport_fastrtps_c-cba7407c71dc8532c91f.json",
+					"name" : "adas_msgs__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "adas_msgs__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-adas_msgs__rosidl_typesupport_fastrtps_cpp-cbd6d822d38f3dd01047.json",
+					"name" : "adas_msgs__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "adas_msgs__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-adas_msgs__rosidl_typesupport_introspection_c-c58a9f90c42aff5c155c.json",
+					"name" : "adas_msgs__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "adas_msgs__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-adas_msgs__rosidl_typesupport_introspection_cpp-1153d2fced5bd443d368.json",
+					"name" : "adas_msgs__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "adas_msgs_s__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-adas_msgs_s__rosidl_typesupport_c-2fd351446998be177ffd.json",
+					"name" : "adas_msgs_s__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "adas_msgs_s__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-adas_msgs_s__rosidl_typesupport_fastrtps_c-8467f690e7786eccd99a.json",
+					"name" : "adas_msgs_s__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "adas_msgs_s__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-adas_msgs_s__rosidl_typesupport_introspection_c-544fdbdc9122c87b1a90.json",
+					"name" : "adas_msgs_s__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "adas_msgs_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-adas_msgs_uninstall-6bf09aa4ba2b732c3283.json",
+					"name" : "adas_msgs_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_adas_msgs_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_adas_msgs_egg-895d4840058bc46ef08e.json",
+					"name" : "ament_cmake_python_build_adas_msgs_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_symlink_adas_msgs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_symlink_adas_msgs-3e1a7cb359e8669709c6.json",
+					"name" : "ament_cmake_python_symlink_adas_msgs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-1f28f10c65cc76bee0b1.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/khatvangi/adas_ws/build/adas_msgs",
+		"source" : "/home/khatvangi/adas_ws/src/adas_msgs"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

@@ -1,0 +1,32 @@
+# IPM (Inverse Perspective Mapping) Calibration
+# Run the calibration script to update src_points and dst_points.
+# These are placeholder values — replace after running on the actual track.
+#
+# Coordinate system: (col, row) in pixels, origin at top-left.
+# src_points: four corners of the trapezoid visible lane region in the raw image.
+# dst_points: corresponding rectangle corners in the 500×800 bird's-eye view.
+# ORDER: bottom-left, bottom-right, top-right, top-left (same for both)
+
+src_points:
+  - [130, 479]   # bottom-left
+  - [510, 479]   # bottom-right
+  - [420, 290]   # top-right (vanishing region)
+  - [220, 290]   # top-left  (vanishing region)
+
+dst_points:
+  - [80,  799]   # bottom-left  in bird-eye
+  - [420, 799]   # bottom-right
+  - [420, 0]     # top-right
+  - [80,  0]     # top-left
+
+output_size: [500, 800]           # [width, height] of bird-eye image
+
+# Scale factors — calibrate by measuring known distance on track
+metres_per_pixel_x: 0.00185      # ~1.85 mm/px horizontally
+metres_per_pixel_y: 0.00240      # ~2.40 mm/px longitudinally
+
+# Car centre in warped image (pixels from left)
+car_centre_x: 250                 # output_size[0] / 2
+
+# Known lane width for SINGLE_LANE recovery (metres)
+lane_width_m: 0.385

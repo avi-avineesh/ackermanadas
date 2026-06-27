@@ -1,0 +1,27 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from adas_msgs/msg/LaneData.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/Header.idl"
+
+module adas_msgs {
+  module msg {
+    struct LaneData {
+      std_msgs::msg::Header header;
+
+      float left_x;
+
+      float right_x;
+
+      float centre_x;
+
+      float curvature;
+
+      float lateral_error_m;
+
+      float confidence;
+
+      string recovery_mode;
+    };
+  };
+};

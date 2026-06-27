@@ -1,0 +1,21 @@
+running develop
+running egg_info
+writing adas_core.egg-info/PKG-INFO
+writing dependency_links to adas_core.egg-info/dependency_links.txt
+writing entry points to adas_core.egg-info/entry_points.txt
+writing requirements to adas_core.egg-info/requires.txt
+writing top-level names to adas_core.egg-info/top_level.txt
+reading manifest file 'adas_core.egg-info/SOURCES.txt'
+writing manifest file 'adas_core.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/khatvangi/adas_ws/install/adas_core/lib/python3.12/site-packages/adas-core.egg-link (link to .)
+Installing acc_node script to /home/khatvangi/adas_ws/install/adas_core/lib/adas_core
+Installing aeb_node script to /home/khatvangi/adas_ws/install/adas_core/lib/adas_core
+Installing can_bridge_node script to /home/khatvangi/adas_ws/install/adas_core/lib/adas_core
+Installing ekf_node script to /home/khatvangi/adas_ws/install/adas_core/lib/adas_core
+Installing lka_node script to /home/khatvangi/adas_ws/install/adas_core/lib/adas_core
+Installing safety_arbiter script to /home/khatvangi/adas_ws/install/adas_core/lib/adas_core
+Installing tsd_node script to /home/khatvangi/adas_ws/install/adas_core/lib/adas_core
+
+Installed /home/khatvangi/adas_ws/build/adas_core
+running symlink_data

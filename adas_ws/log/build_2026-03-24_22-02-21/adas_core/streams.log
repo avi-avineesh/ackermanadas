@@ -1,0 +1,23 @@
+[0.648s] Invoking command in '/home/khatvangi/adas_ws/build/adas_core': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/khatvangi/adas_ws/build/adas_core/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/khatvangi/adas_ws/install/adas_core/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/khatvangi/adas_ws/build/adas_core/build --no-deps symlink_data
+[0.861s] running develop
+[1.002s] running egg_info
+[1.016s] writing adas_core.egg-info/PKG-INFO
+[1.016s] writing dependency_links to adas_core.egg-info/dependency_links.txt
+[1.016s] writing entry points to adas_core.egg-info/entry_points.txt
+[1.016s] writing requirements to adas_core.egg-info/requires.txt
+[1.016s] writing top-level names to adas_core.egg-info/top_level.txt
+[1.045s] reading manifest file 'adas_core.egg-info/SOURCES.txt'
+[1.047s] writing manifest file 'adas_core.egg-info/SOURCES.txt'
+[1.061s] running build_ext
+[1.063s] Creating /home/khatvangi/adas_ws/install/adas_core/lib/python3.12/site-packages/adas-core.egg-link (link to .)
+[1.063s] Installing acc_node script to /home/khatvangi/adas_ws/install/adas_core/lib/adas_core
+[1.063s] Installing aeb_node script to /home/khatvangi/adas_ws/install/adas_core/lib/adas_core
+[1.063s] Installing can_bridge_node script to /home/khatvangi/adas_ws/install/adas_core/lib/adas_core
+[1.064s] Installing ekf_node script to /home/khatvangi/adas_ws/install/adas_core/lib/adas_core
+[1.064s] Installing lka_node script to /home/khatvangi/adas_ws/install/adas_core/lib/adas_core
+[1.064s] Installing safety_arbiter script to /home/khatvangi/adas_ws/install/adas_core/lib/adas_core
+[1.064s] Installing tsd_node script to /home/khatvangi/adas_ws/install/adas_core/lib/adas_core
+[1.064s] 
+[1.064s] Installed /home/khatvangi/adas_ws/build/adas_core
+[1.064s] running symlink_data
+[1.086s] Invoked command in '/home/khatvangi/adas_ws/build/adas_core' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/khatvangi/adas_ws/build/adas_core/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/khatvangi/adas_ws/install/adas_core/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/khatvangi/adas_ws/build/adas_core/build --no-deps symlink_data

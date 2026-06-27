@@ -1,0 +1,1 @@
+/home/khatvangi/adas_ws/install/robot_bringup/lib/robot_bringup/spawn_ego

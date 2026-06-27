@@ -1,0 +1,14 @@
+{
+  "package_name": "adas_core",
+  "output_dir": "/home/khatvangi/adas_ws/build/adas_core/rosidl_generator_type_description/adas_core",
+  "idl_tuples": [
+    "/home/khatvangi/adas_ws/build/adas_core/rosidl_adapter/adas_core:msg/BoundingBox2D.idl",
+    "/home/khatvangi/adas_ws/build/adas_core/rosidl_adapter/adas_core:msg/BoundingBox2DArray.idl",
+    "/home/khatvangi/adas_ws/build/adas_core/rosidl_adapter/adas_core:msg/LaneData.idl",
+    "/home/khatvangi/adas_ws/build/adas_core/rosidl_adapter/adas_core:msg/VehicleParams.idl"
+  ],
+  "include_paths": [
+    "std_msgs:/opt/ros/jazzy/share/std_msgs",
+    "builtin_interfaces:/opt/ros/jazzy/share/builtin_interfaces"
+  ]
+}

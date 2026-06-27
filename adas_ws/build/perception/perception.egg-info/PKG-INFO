@@ -1,0 +1,13 @@
+Metadata-Version: 2.2
+Name: perception
+Version: 1.0.0
+Summary: Camera and LiDAR perception nodes — YOLO11n + ToF validation
+Maintainer: ADAS Team
+Maintainer-email: adas@example.com
+License: MIT
+Requires-Dist: setuptools
+Dynamic: license
+Dynamic: maintainer
+Dynamic: maintainer-email
+Dynamic: requires-dist
+Dynamic: summary

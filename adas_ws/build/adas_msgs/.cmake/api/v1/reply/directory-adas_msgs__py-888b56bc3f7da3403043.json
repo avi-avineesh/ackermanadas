@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "adas_msgs__py",
+		"source" : "/home/khatvangi/adas_ws/build/adas_msgs/adas_msgs__py"
+	}
+}

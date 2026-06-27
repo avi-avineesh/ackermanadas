@@ -1,0 +1,31 @@
+[0.561s] Invoking command in '/home/khatvangi/adas_ws/build/adas_core': AMENT_PREFIX_PATH=/home/khatvangi/adas_ws/install/adas_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/khatvangi/adas_ws/install/adas_msgs:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/khatvangi/adas_ws/install/adas_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/khatvangi/adas_ws/build/adas_core/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/khatvangi/adas_ws/install/adas_core/lib/python3.12/site-packages:/home/khatvangi/adas_ws/install/adas_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/khatvangi/adas_ws/build/adas_core/build --no-deps symlink_data
+[0.794s] running develop
+[0.941s] running egg_info
+[0.955s] writing adas_core.egg-info/PKG-INFO
+[0.956s] writing dependency_links to adas_core.egg-info/dependency_links.txt
+[0.956s] writing entry points to adas_core.egg-info/entry_points.txt
+[0.956s] writing requirements to adas_core.egg-info/requires.txt
+[0.956s] writing top-level names to adas_core.egg-info/top_level.txt
+[0.985s] reading manifest file 'adas_core.egg-info/SOURCES.txt'
+[0.986s] writing manifest file 'adas_core.egg-info/SOURCES.txt'
+[1.001s] running build_ext
+[1.002s] Creating /home/khatvangi/adas_ws/install/adas_core/lib/python3.12/site-packages/adas-core.egg-link (link to .)
+[1.002s] Installing acc_node script to /home/khatvangi/adas_ws/install/adas_core/lib/adas_core
+[1.002s] Installing aeb_node script to /home/khatvangi/adas_ws/install/adas_core/lib/adas_core
+[1.002s] Installing camera_node script to /home/khatvangi/adas_ws/install/adas_core/lib/adas_core
+[1.002s] Installing can_bridge_node script to /home/khatvangi/adas_ws/install/adas_core/lib/adas_core
+[1.002s] Installing dashboard_node script to /home/khatvangi/adas_ws/install/adas_core/lib/adas_core
+[1.002s] Installing ekf_node script to /home/khatvangi/adas_ws/install/adas_core/lib/adas_core
+[1.002s] Installing imu_node script to /home/khatvangi/adas_ws/install/adas_core/lib/adas_core
+[1.002s] Installing lane_node script to /home/khatvangi/adas_ws/install/adas_core/lib/adas_core
+[1.003s] Installing lka_node script to /home/khatvangi/adas_ws/install/adas_core/lib/adas_core
+[1.003s] Installing mode_manager script to /home/khatvangi/adas_ws/install/adas_core/lib/adas_core
+[1.003s] Installing safety_arbiter script to /home/khatvangi/adas_ws/install/adas_core/lib/adas_core
+[1.003s] Installing tf_luna_node script to /home/khatvangi/adas_ws/install/adas_core/lib/adas_core
+[1.003s] Installing tof_node script to /home/khatvangi/adas_ws/install/adas_core/lib/adas_core
+[1.003s] Installing traffic_node script to /home/khatvangi/adas_ws/install/adas_core/lib/adas_core
+[1.003s] Installing yolo_node script to /home/khatvangi/adas_ws/install/adas_core/lib/adas_core
+[1.003s] 
+[1.003s] Installed /home/khatvangi/adas_ws/build/adas_core
+[1.003s] running symlink_data
+[1.023s] Invoked command in '/home/khatvangi/adas_ws/build/adas_core' returned '0': AMENT_PREFIX_PATH=/home/khatvangi/adas_ws/install/adas_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/khatvangi/adas_ws/install/adas_msgs:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/khatvangi/adas_ws/install/adas_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/khatvangi/adas_ws/build/adas_core/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/khatvangi/adas_ws/install/adas_core/lib/python3.12/site-packages:/home/khatvangi/adas_ws/install/adas_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/khatvangi/adas_ws/build/adas_core/build --no-deps symlink_data

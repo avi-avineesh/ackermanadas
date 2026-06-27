@@ -1,0 +1,64 @@
+# PID and control parameters for all ADAS nodes
+# Loaded at runtime by each node; override via ROS2 parameters or this file.
+
+lka:
+  kp: 0.012
+  ki: 0.0001
+  kd: 0.006
+  drift_gain: -0.3            # steer += drift_gain * drift_correction (rad)
+  min_speed: 0.12             # m/s floor when speed-profiling curvature
+  base_speed: 0.40            # m/s straight-line cruise target
+  curvature_speed_gain: 0.8   # speed = base_speed * (1 - gain * |curvature|)
+  windup_limit: 0.15          # integral anti-windup clamp (rad)
+
+acc:
+  kp: 1.2
+  ki: 0.05
+  kd: 0.3
+  desired_gap_k: 1.5          # gap_desired = v_ego * k + gap_min
+  desired_gap_min: 0.30       # m — minimum following distance
+  catch_up_hysteresis: 0.50   # m — extra gap above desired to switch to CATCH_UP
+  aeb_handoff_ttc: 1.5        # s — hand off to AEB below this TTC
+  windup_limit: 1.0           # m/s² anti-windup
+
+aeb:
+  alpha_base: 0.60            # weight on lidar vs camera in fusion score
+  lidar_quality_decay: 0.20   # minimum lidar quality when reading is inf
+  cam_availability_timeout: 2.0  # s — declare camera unavailable after this
+  lidar_availability_timeout: 2.0
+  # AND-logic threat thresholds (single-sensor fallback adds 20% margin)
+  lidar_ttc_warning: 3.0      # s
+  lidar_ttc_partial: 2.0
+  lidar_ttc_hard: 1.0
+  lidar_ttc_stop: 0.5
+  cam_conf_threshold: 0.40    # camera confirmation threshold
+  # Score thresholds for braking levels
+  score_warning: 0.30
+  score_partial: 0.60
+  score_hard: 0.80
+  score_stop: 0.95
+  # Braking intensities (fraction of commanded speed)
+  partial_brake_fraction: 0.50
+  hard_brake_fraction: 0.08
+
+traffic:
+  debounce_count: 3           # consecutive same-colour readings to confirm
+
+motor_pid:                    # Arduino TBW ECU (embedded in firmware)
+  kp: 0.8
+  ki: 0.3
+  kd: 0.05
+  watchdog_ms: 500
+
+ekf:
+  # Process noise (sigma²) for [x, y, theta, v, omega]
+  q_x:     0.0001
+  q_y:     0.0001
+  q_theta: 0.000025
+  q_v:     0.01
+  q_omega: 0.0025
+  # Encoder measurement noise (sigma²) for [v, omega]
+  r_enc_v: 0.0025
+  r_enc_w: 0.0025
+  # IMU measurement noise (sigma²) for [omega]
+  r_imu_w: 0.0004

@@ -1,0 +1,17 @@
+[0.949s] Invoking command in '/home/khatvangi/adas_ws/build/dashboard': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/khatvangi/adas_ws/build/dashboard/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/khatvangi/adas_ws/install/dashboard/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/khatvangi/adas_ws/build/dashboard/build --no-deps symlink_data
+[1.269s] running develop
+[1.457s] running egg_info
+[1.477s] writing dashboard.egg-info/PKG-INFO
+[1.477s] writing dependency_links to dashboard.egg-info/dependency_links.txt
+[1.478s] writing entry points to dashboard.egg-info/entry_points.txt
+[1.478s] writing requirements to dashboard.egg-info/requires.txt
+[1.478s] writing top-level names to dashboard.egg-info/top_level.txt
+[1.517s] reading manifest file 'dashboard.egg-info/SOURCES.txt'
+[1.518s] writing manifest file 'dashboard.egg-info/SOURCES.txt'
+[1.539s] running build_ext
+[1.539s] Creating /home/khatvangi/adas_ws/install/dashboard/lib/python3.12/site-packages/dashboard.egg-link (link to .)
+[1.540s] Installing gui_node script to /home/khatvangi/adas_ws/install/dashboard/lib/dashboard
+[1.540s] 
+[1.540s] Installed /home/khatvangi/adas_ws/build/dashboard
+[1.540s] running symlink_data
+[1.576s] Invoked command in '/home/khatvangi/adas_ws/build/dashboard' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/khatvangi/adas_ws/build/dashboard/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/khatvangi/adas_ws/install/dashboard/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/khatvangi/adas_ws/build/dashboard/build --no-deps symlink_data

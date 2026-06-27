@@ -1,0 +1,2 @@
+[console_scripts]
+gui_node = dashboard.gui_node:main
